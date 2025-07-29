@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-gray-50">
-    @include('core.partial.navbar')
+    @include('core.partials.navbar')
     @yield('content')
     @include('core.partials.footer')
     @include('core.partials.script')
