@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('landingPage.index');
 });
 
+Route::get('/about', function () {
+    return view('landingPage.about');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

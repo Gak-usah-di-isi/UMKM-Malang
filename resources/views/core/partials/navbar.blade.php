@@ -15,8 +15,8 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-8">
-                <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Beranda</a>
-                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Tentang</a>
+                <a href="/" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Beranda</a>
+                <a href="/about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Tentang</a>
                 <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Produk</a>
                 <a href="#categories" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kategori</a>
                 <a href="#umkm" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">UMKM</a>
