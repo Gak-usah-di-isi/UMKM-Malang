@@ -1,4 +1,4 @@
-@extends('layouts.landingPage')
+@extends('core.landingPage')
 
 @section('title', 'UMKM Kota Malang')
 

@@ -11,10 +11,10 @@
 </head>
 
 <body class="bg-gray-50">
-    @include('layouts.partials-landingPage.navbar')
+    @include('core.partial.navbar')
     @yield('content')
-    @include('layouts.partials-landingPage.footer')
-    @include('layouts.partials-landingPage.script')
+    @include('core.partials.footer')
+    @include('core.partials.script')
 </body>
 
 </html>
