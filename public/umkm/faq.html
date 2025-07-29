@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Katalog UMKM Kota Malang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-bounce-slow {
+        animation: bounce 3s infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .btn-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: all 0.3s ease;
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .navbar-scroll {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .section-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .section-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 bg-white shadow-sm"
+    >
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-store text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-gray-800">UMKM Malang</h1>
+              <p class="text-xs text-gray-600">Produk Lokal Berkualitas</p>
+            </div>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Beranda</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Tentang</a
+            >
+            <a
+              href="products.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Produk</a
+            >
+            <a
+              href="categories.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Kategori</a
+            >
+            <a
+              href="umkm.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >UMKM</a
+            >
+            <a
+              href="news.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Berita</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+              >Kontak</a
+            >
+            <a href="faq.html" class="text-blue-600 font-medium">FAQ</a>
+            <button
+              class="btn-gradient text-white px-6 py-2 rounded-full font-medium"
+            >
+              Gabung UMKM
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="lg:hidden text-gray-700 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300"
+      >
+        <div class="p-6">
+          <button
+            id="close-menu"
+            class="absolute top-6 right-6 text-2xl text-gray-700"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="mt-16 space-y-6">
+            <a
+              href="index.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Beranda</a
+            >
+            <a
+              href="about.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Tentang</a
+            >
+            <a
+              href="products.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Produk</a
+            >
+            <a
+              href="categories.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Kategori</a
+            >
+            <a
+              href="umkm.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >UMKM</a
+            >
+            <a
+              href="news.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Berita</a
+            >
+            <a
+              href="contact.html"
+              class="block text-xl text-gray-700 hover:text-blue-600"
+              >Kontak</a
+            >
+            <a href="faq.html" class="block text-xl text-blue-600 font-medium"
+              >FAQ</a
+            >
+            <button
+              class="btn-gradient text-white px-8 py-3 rounded-full font-medium mt-6"
+            >
+              Gabung UMKM
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero FAQ Section -->
+    <section
+      class="min-h-[40vh] gradient-bg flex items-center relative overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full animate-float"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-5 rounded-full animate-bounce-slow"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center text-white py-12">
+          <div class="section-reveal">
+            <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              Pertanyaan yang <span class="text-yellow-300">Sering Diajukan</span>
+            </h1>
+            <p class="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
+              Temukan jawaban atas pertanyaan umum seputar platform kami
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Content Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center text-sm text-gray-600 mb-4">
+          <a href="index.html" class="hover:text-blue-600">Beranda</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-400">FAQ</span>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-12 section-reveal">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">
+              Pertanyaan Umum
+            </h2>
+            
+            <div class="space-y-4">
+              <!-- FAQ Item 1 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Bagaimana cara mendaftarkan UMKM saya di platform ini?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Anda dapat mendaftarkan UMKM Anda dengan mengklik tombol "Gabung UMKM" di menu navigasi. 
+                    Setelah itu, Anda akan diminta untuk mengisi formulir pendaftaran dengan data lengkap UMKM Anda. 
+                    Tim kami akan memverifikasi data dalam 1-2 hari kerja sebelum akun UMKM Anda diaktifkan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Apakah ada biaya untuk mendaftar dan menggunakan platform ini?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Tidak, pendaftaran dan penggunaan dasar platform ini sepenuhnya gratis. 
+                    Kami berkomitmen untuk mendukung perkembangan UMKM tanpa membebani biaya. 
+                    Namun, kami menawarkan layanan promosi berbayar dengan jangkauan lebih luas bagi UMKM yang ingin meningkatkan visibilitas produknya.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Bagaimana cara mempromosikan produk UMKM saya?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Setelah akun UMKM Anda aktif, Anda bisa mengunggah produk dengan foto dan deskripsi yang menarik. 
+                    Produk unggulan akan ditampilkan di halaman depan secara berkala. 
+                    Kami juga menyediakan layanan promosi berbayar dengan jangkauan lebih luas melalui media sosial dan jaringan mitra kami.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Apakah platform ini menyediakan pelatihan untuk UMKM?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Ya, kami secara rutin menyelenggarakan pelatihan gratis untuk UMKM terdaftar, meliputi digital marketing, pengembangan produk, manajemen keuangan, dan lainnya. 
+                    Informasi pelatihan bisa dilihat di halaman "Berita & Artikel" atau melalui newsletter kami.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Bagaimana sistem pembayaran jika ada transaksi di platform ini?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Saat ini platform kami berfungsi sebagai katalog online. Transaksi pembelian dilakukan langsung antara pembeli dan penjual melalui kontak yang tersedia. 
+                    Kami merekomendasikan pembeli untuk menghubungi UMKM melalui WhatsApp atau media sosial yang tertera di profil UMKM.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 6 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Apa keuntungan bergabung dengan platform ini?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Keuntungan bergabung dengan platform kami antara lain:
+                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                      <li>Jangkauan pasar yang lebih luas</li>
+                      <li>Promosi gratis melalui katalog online</li>
+                      <li>Akses ke pelatihan dan workshop UMKM</li>
+                      <li>Jaringan dengan UMKM lainnya</li>
+                      <li>Dukungan dari pemerintah kota</li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-reveal">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">
+              Pertanyaan Teknis
+            </h2>
+            
+            <div class="space-y-4">
+              <!-- FAQ Item 7 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Bagaimana cara mengupdate informasi UMKM saya?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Setelah login ke akun UMKM Anda, Anda dapat mengupdate informasi melalui menu "Profil UMKM". 
+                    Perubahan akan diverifikasi oleh tim kami dalam 1-2 hari kerja sebelum ditampilkan di platform.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 8 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Saya lupa password akun UMKM saya, bagaimana cara reset?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Di halaman login, klik "Lupa Password" dan masukkan email yang terdaftar. 
+                    Kami akan mengirimkan link untuk reset password ke email Anda. 
+                    Jika mengalami kesulitan, Anda dapat menghubungi tim support kami melalui halaman Kontak.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 9 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Berapa lama waktu verifikasi pendaftaran UMKM?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Proses verifikasi biasanya memakan waktu 1-2 hari kerja. 
+                    Jika setelah 3 hari kerja Anda belum menerima konfirmasi, silakan hubungi tim support kami melalui halaman Kontak.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 10 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <button class="w-full flex justify-between items-center p-6 text-left">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Bagaimana cara menghapus akun UMKM saya?
+                  </h3>
+                  <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                  <p class="text-gray-600">
+                    Untuk menghapus akun UMKM, silakan kirim permohonan melalui email ke support@umkmmalang.go.id dengan subjek "Permohonan Penghapusan Akun UMKM". 
+                    Harap sertakan nama UMKM dan alasan penghapusan akun. Tim kami akan memproses permohonan Anda dalam 3-5 hari kerja.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-10 right-10 w-64 h-64 bg-white opacity-10 rounded-full animate-float"
+        ></div>
+        <div
+          class="absolute bottom-10 left-10 w-80 h-80 bg-white opacity-5 rounded-full animate-bounce-slow"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center text-white">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+            Masih Ada Pertanyaan?
+          </h2>
+          <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Hubungi tim support kami yang siap membantu Anda kapan saja
+          </p>
+          <button
+            class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all transform hover:scale-105"
+          >
+            <i class="fas fa-headset mr-2"></i>
+            Hubungi Support
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-4 gap-12">
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-store text-white text-xl"></i>
+              </div>
+              <div>
+                <h1 class="text-xl font-bold">UMKM Malang</h1>
+                <p class="text-xs text-gray-400">Produk Lokal Berkualitas</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Platform terdepan untuk produk UMKM berkualitas di Kota Malang.
+              Mendukung ekonomi lokal dan memberdayakan pelaku usaha kecil
+              menengah.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              >
+                <i class="fab fa-facebook-f text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
+              >
+                <i class="fab fa-instagram text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+              >
+                <i class="fab fa-twitter text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+              >
+                <i class="fab fa-youtube text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-6">Kategori Produk</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Makanan & Minuman</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Fashion & Aksesoris</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Kerajinan & Souvenir</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Produk Herbal</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Jasa & Layanan</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-6">Layanan</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Daftar UMKM</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Promosi Produk</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Pelatihan Bisnis</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Konsultasi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Bantuan Teknis</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-6">
+              Dapatkan update terbaru tentang produk dan event UMKM Malang
+            </p>
+            <div class="space-y-4">
+              <input
+                type="email"
+                placeholder="Email Anda"
+                class="w-full px-4 py-3 bg-gray-800 rounded-xl border border-gray-700 focus:border-blue-500 focus:outline-none text-white"
+              />
+              <button
+                class="w-full btn-gradient text-white py-3 rounded-xl font-semibold text-lg"
+              >
+                Berlangganan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm">
+            © 2023 UMKM Malang. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors text-sm"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors text-sm"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors text-sm"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-full");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("translate-x-full");
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scroll", "shadow-sm");
+        } else {
+          navbar.classList.remove("navbar-scroll", "shadow-sm");
+        }
+      });
+
+      // Scroll reveal animation
+      function revealSections() {
+        const sections = document.querySelectorAll(".section-reveal");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight - 100) {
+            section.classList.add("revealed");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealSections);
+      window.addEventListener("load", revealSections);
+
+      // FAQ Accordion
+      document.querySelectorAll(".border-gray-200 button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector("i");
+
+          content.classList.toggle("hidden");
+          icon.classList.toggle("fa-chevron-down");
+          icon.classList.toggle("fa-chevron-up");
+        });
+      });
+    </script>
+  </body>
+</html>
