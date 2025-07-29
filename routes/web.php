@@ -11,6 +11,26 @@ Route::get('/about', function () {
     return view('landingPage.about');
 });
 
+Route::get('/products', function () {
+    return view('landingPage.products');
+});
+
+Route::get('/categories', function () {
+    return view('landingPage.categories');
+});
+
+Route::get('/umkm-list', function () {
+    return view('landingPage.umkm-list');
+});
+
+Route::get('/articles', function () {
+    return view('landingPage.articles');
+});
+
+Route::get('/umkm-list', function () {
+    return view('landingPage.umkm-list');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

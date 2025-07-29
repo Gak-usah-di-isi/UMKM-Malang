@@ -17,10 +17,10 @@
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="/" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Beranda</a>
                 <a href="/about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Tentang</a>
-                <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Produk</a>
-                <a href="#categories" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kategori</a>
-                <a href="#umkm" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">UMKM</a>
-                <a href="#news" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Berita</a>
+                <a href="/products" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Produk</a>
+                <a href="/categories" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kategori</a>
+                <a href="/umkm-list" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">UMKM</a>
+                <a href="/articles" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Berita</a>
                 <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kontak</a>
                 <button class="btn-gradient text-white px-6 py-2 rounded-full font-medium">
                     Gabung UMKM

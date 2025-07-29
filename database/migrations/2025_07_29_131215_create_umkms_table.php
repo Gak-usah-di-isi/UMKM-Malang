@@ -18,6 +18,7 @@ return new class extends Migration
                 ->constrained('users')
                 ->onDelete('set null');
             $table->string('name');
+            $table->foreignId('category')->constrained('categories')->onDelete('cascade');
             $table->string('logo_url')->nullable();
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
