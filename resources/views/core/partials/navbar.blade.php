@@ -21,7 +21,7 @@
                 <a href="/categories" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kategori</a>
                 <a href="/umkm-list" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">UMKM</a>
                 <a href="/articles" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Berita</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kontak</a>
+                <a href="/contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Kontak</a>
                 <button class="btn-gradient text-white px-6 py-2 rounded-full font-medium">
                     Gabung UMKM
                 </button>

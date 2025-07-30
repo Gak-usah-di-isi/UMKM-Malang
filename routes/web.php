@@ -31,6 +31,10 @@ Route::get('/umkm-list', function () {
     return view('landingPage.umkm-list');
 });
 
+Route::get('/contact', function () {
+    return view('landingPage.contact');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

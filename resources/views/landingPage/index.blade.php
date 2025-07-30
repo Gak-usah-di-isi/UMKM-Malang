@@ -3,838 +3,760 @@
 @section('title', 'UMKM Kota Malang')
 
 @section('content')
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen gradient-bg flex items-center relative overflow-hidden pt-20">
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full animate-float"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
-        </div>
+<!-- Hero Section -->
+<section id="home" class="min-h-screen gradient-bg flex items-center relative overflow-hidden pt-20">
+    <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
+    </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-white space-y-8">
-                    <div class="section-reveal">
-                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
-                            Katalog
-                            <span class="block text-yellow-300">UMKM</span>
-                            <span class="block text-3xl lg:text-4xl font-medium">Kota Malang</span>
-                        </h1>
-                    </div>
-
-                    <div class="section-reveal">
-                        <p class="text-xl lg:text-2xl text-blue-100 leading-relaxed">
-                            Temukan produk lokal berkualitas dari UMKM terbaik Kota Malang.
-                            Dukung ekonomi lokal dengan berbelanja produk asli buatan tangan pengrajin lokal.
-                        </p>
-                    </div>
-
-                    <div class="section-reveal flex flex-col sm:flex-row gap-4">
-                        <button
-                            class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all transform hover:scale-105">
-                            <i class="fas fa-search mr-2"></i>
-                            Jelajahi Produk
-                        </button>
-                        <button
-                            class="glass-effect text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all">
-                            <i class="fas fa-play mr-2"></i>
-                            Lihat Video
-                        </button>
-                    </div>
-
-                    <div class="section-reveal grid grid-cols-3 gap-6 pt-8">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">500+</div>
-                            <div class="text-blue-200">UMKM Terdaftar</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">2000+</div>
-                            <div class="text-blue-200">Produk Tersedia</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">10K+</div>
-                            <div class="text-blue-200">Pelanggan Puas</div>
-                        </div>
-                    </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white space-y-8">
+                <div class="section-reveal">
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                        Katalog
+                        <span class="block text-yellow-300">UMKM</span>
+                        <span class="block text-3xl lg:text-4xl font-medium">Kota Malang</span>
+                    </h1>
                 </div>
 
                 <div class="section-reveal">
-                    <div class="relative">
-                        <div
-                            class="w-full h-96 lg:h-[500px] bg-white bg-opacity-10 rounded-3xl backdrop-blur-sm border border-white border-opacity-20 flex items-center justify-center">
-                            <div class="text-center text-white">
-                                <i class="fas fa-store text-6xl mb-4 opacity-50"></i>
-                                <p class="text-xl opacity-75">Showcase Produk UMKM</p>
-                            </div>
-                        </div>
-                        <div
-                            class="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce-slow">
-                            <i class="fas fa-star text-white text-3xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="py-16 bg-white relative -mt-20 mx-6">
-        <div class="container mx-auto">
-            <div class="bg-white rounded-3xl shadow-2xl p-8 glass-effect">
-                <div class="grid lg:grid-cols-4 gap-4">
-                    <div class="lg:col-span-2">
-                        <input type="text" placeholder="Cari produk UMKM..."
-                            class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none text-lg">
-                    </div>
-                    <div>
-                        <select
-                            class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none text-lg">
-                            <option>Semua Kategori</option>
-                            <option>Makanan & Minuman</option>
-                            <option>Fashion & Aksesoris</option>
-                            <option>Kerajinan & Souvenir</option>
-                            <option>Produk Herbal</option>
-                            <option>Jasa & Layanan</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="w-full btn-gradient text-white px-6 py-4 rounded-2xl font-semibold text-lg">
-                            <i class="fas fa-search mr-2"></i>
-                            Cari
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Kategori <span class="text-gradient">Produk</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Jelajahi berbagai kategori produk UMKM berkualitas dari Kota Malang
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-                <div class="section-reveal card-hover bg-white rounded-3xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-utensils text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Makanan & Minuman</h3>
-                    <p class="text-gray-600 mb-4">Kuliner khas Malang yang lezat</p>
-                    <span class="text-sm text-blue-600 font-medium">150+ Produk</span>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tshirt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fashion & Aksesoris</h3>
-                    <p class="text-gray-600 mb-4">Mode dan aksesoris trendy</p>
-                    <span class="text-sm text-blue-600 font-medium">200+ Produk</span>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-palette text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Kerajinan & Souvenir</h3>
-                    <p class="text-gray-600 mb-4">Kerajinan tangan berkualitas</p>
-                    <span class="text-sm text-blue-600 font-medium">180+ Produk</span>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Produk Herbal</h3>
-                    <p class="text-gray-600 mb-4">Herbal dan kesehatan alami</p>
-                    <span class="text-sm text-blue-600 font-medium">80+ Produk</span>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl p-8 shadow-lg text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-concierge-bell text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Jasa & Layanan</h3>
-                    <p class="text-gray-600 mb-4">Berbagai jasa profesional</p>
-                    <span class="text-sm text-blue-600 font-medium">60+ Layanan</span>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 section-reveal">
-                <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
-                    Lihat Semua Kategori
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section id="products" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Produk <span class="text-gradient">Unggulan</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Produk terbaik dan terpopuler dari UMKM Kota Malang
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Product Cards -->
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-red-200 to-red-300 flex items-center justify-center">
-                        <i class="fas fa-cookie-bite text-red-600 text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-sm text-blue-600 font-medium">Makanan</span>
-                            <div class="flex items-center">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <span class="text-sm text-gray-600 ml-1">4.8</span>
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Keripik Tempe Original</h3>
-                        <p class="text-gray-600 text-sm mb-4">Keripik tempe renyah dengan bumbu rahasia khas Malang</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-blue-600">Rp 25.000</span>
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
-                                Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
-                        <i class="fas fa-gem text-purple-600 text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-sm text-blue-600 font-medium">Fashion</span>
-                            <div class="flex items-center">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <span class="text-sm text-gray-600 ml-1">4.9</span>
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Tas Rajut Handmade</h3>
-                        <p class="text-gray-600 text-sm mb-4">Tas rajut cantik buatan tangan dengan kualitas premium</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-blue-600">Rp 125.000</span>
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
-                                Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
-                        <i class="fas fa-seedling text-green-600 text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-sm text-blue-600 font-medium">Herbal</span>
-                            <div class="flex items-center">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <span class="text-sm text-gray-600 ml-1">4.7</span>
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Jamu Tradisional</h3>
-                        <p class="text-gray-600 text-sm mb-4">Jamu herbal alami untuk kesehatan keluarga</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-blue-600">Rp 35.000</span>
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
-                                Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
-                        <i class="fas fa-coffee text-yellow-600 text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-sm text-blue-600 font-medium">Minuman</span>
-                            <div class="flex items-center">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <span class="text-sm text-gray-600 ml-1">4.8</span>
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Kopi Arabika Malang</h3>
-                        <p class="text-gray-600 text-sm mb-4">Kopi premium dari perkebunan lokal Malang</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-blue-600">Rp 85.000</span>
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
-                                Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 section-reveal">
-                <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
-                    Lihat Semua Produk
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="section-reveal">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-                        Tentang <span class="text-gradient">Platform</span>
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        Platform Katalog UMKM Kota Malang adalah inisiatif untuk mendukung dan mempromosikan
-                        produk-produk unggulan dari pelaku usaha mikro, kecil, dan menengah di Kota Malang.
+                    <p class="text-xl lg:text-2xl text-blue-100 leading-relaxed">
+                        Temukan produk lokal berkualitas dari UMKM terbaik Kota Malang.
+                        Dukung ekonomi lokal dengan berbelanja produk asli buatan tangan pengrajin lokal.
                     </p>
+                </div>
 
-                    <div class="space-y-6 mb-8">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-target text-blue-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800 mb-2">Visi</h3>
-                                <p class="text-gray-600">Menjadi platform terdepan untuk produk UMKM berkualitas di
-                                    Indonesia</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-handshake text-green-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-gray-800 mb-2">Misi</h3>
-                                <p class="text-gray-600">Memberdayakan UMKM lokal dan menghubungkan dengan pasar yang lebih
-                                    luas</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
-                        Pelajari Lebih Lanjut
+                <div class="section-reveal flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all transform hover:scale-105">
+                        <i class="fas fa-search mr-2"></i>
+                        Jelajahi Produk
+                    </button>
+                    <button
+                        class="glass-effect text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:bg-opacity-20 transition-all">
+                        <i class="fas fa-play mr-2"></i>
+                        Lihat Video
                     </button>
                 </div>
 
-                <div class="section-reveal">
-                    <div class="relative">
-                        <div
-                            class="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-city text-6xl text-blue-600 mb-4 opacity-50"></i>
-                                <p class="text-xl text-gray-600">Kota Malang</p>
-                                <p class="text-sm text-gray-500">Mendukung UMKM Lokal</p>
-                            </div>
-                        </div>
+                <div class="section-reveal grid grid-cols-3 gap-6 pt-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">500+</div>
+                        <div class="text-blue-200">UMKM Terdaftar</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">2000+</div>
+                        <div class="text-blue-200">Produk Tersedia</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">10K+</div>
+                        <div class="text-blue-200">Pelanggan Puas</div>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- Statistics Cards -->
-                        <div class="absolute -bottom-10 -left-10 bg-white rounded-2xl shadow-lg p-6">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-600">500+</div>
-                                <div class="text-sm text-gray-600">UMKM Partner</div>
-                            </div>
+            <div class="section-reveal">
+                <div class="relative">
+                    <div
+                        class="w-full h-96 lg:h-[500px] bg-white bg-opacity-10 rounded-3xl backdrop-blur-sm border border-white border-opacity-20 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-store text-6xl mb-4 opacity-50"></i>
+                            <p class="text-xl opacity-75">Showcase Produk UMKM</p>
                         </div>
-
-                        <div class="absolute -top-10 -right-10 bg-white rounded-2xl shadow-lg p-6">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-green-600">2000+</div>
-                                <div class="text-sm text-gray-600">Produk Tersedia</div>
-                            </div>
-                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce-slow">
+                        <i class="fas fa-star text-white text-3xl"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- UMKM Partners -->
-    <section id="umkm" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Partner <span class="text-gradient">UMKM</span>
+<!-- Search Section -->
+<section class="py-16 bg-white relative -mt-20 mx-6">
+    <div class="container mx-auto">
+        <div class="bg-white rounded-3xl border border-gray-100 p-8 glass-effect">
+            <div class="grid lg:grid-cols-4 gap-4">
+                <div class="lg:col-span-2">
+                    <input type="text" placeholder="Cari produk UMKM..."
+                        class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none text-lg">
+                </div>
+                <div>
+                    <select
+                        class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none text-lg">
+                        <option>Semua Kategori</option>
+                        <option>Makanan & Minuman</option>
+                        <option>Fashion & Aksesoris</option>
+                        <option>Kerajinan & Souvenir</option>
+                        <option>Produk Herbal</option>
+                        <option>Jasa & Layanan</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="w-full btn-gradient text-white px-6 py-4 rounded-2xl font-semibold text-lg">
+                        <i class="fas fa-search mr-2"></i>
+                        Cari
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categories" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Kategori <span class="text-gradient">Produk</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Jelajahi berbagai kategori produk UMKM berkualitas dari Kota Malang
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div class="section-reveal card-hover bg-white rounded-3xl p-8 border border-gray-100 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-utensils text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Makanan & Minuman</h3>
+                <p class="text-gray-600 mb-4">Kuliner khas Malang yang lezat</p>
+                <span class="text-sm text-blue-600 font-medium">150+ Produk</span>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl p-8 border border-gray-100 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-tshirt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Fashion & Aksesoris</h3>
+                <p class="text-gray-600 mb-4">Mode dan aksesoris trendy</p>
+                <span class="text-sm text-blue-600 font-medium">200+ Produk</span>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl p-8 border border-gray-100 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-palette text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Kerajinan & Souvenir</h3>
+                <p class="text-gray-600 mb-4">Kerajinan tangan berkualitas</p>
+                <span class="text-sm text-blue-600 font-medium">180+ Produk</span>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl p-8 border border-gray-100 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-leaf text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Produk Herbal</h3>
+                <p class="text-gray-600 mb-4">Herbal dan kesehatan alami</p>
+                <span class="text-sm text-blue-600 font-medium">80+ Produk</span>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl p-8 border border-gray-100 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-concierge-bell text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Jasa & Layanan</h3>
+                <p class="text-gray-600 mb-4">Berbagai jasa profesional</p>
+                <span class="text-sm text-blue-600 font-medium">60+ Layanan</span>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 section-reveal">
+            <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
+                Lihat Semua Kategori
+                <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section id="products" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Produk <span class="text-gradient">Unggulan</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Produk terbaik dan terpopuler dari UMKM Kota Malang
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Product Cards -->
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-red-200 to-red-300 flex items-center justify-center">
+                    <i class="fas fa-cookie-bite text-red-600 text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-blue-600 font-medium">Makanan</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <span class="text-sm text-gray-600 ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Keripik Tempe Original</h3>
+                    <p class="text-gray-600 text-sm mb-4">Keripik tempe renyah dengan bumbu rahasia khas Malang</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-blue-600">Rp 25.000</span>
+                        <button
+                            class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
+                            Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
+                    <i class="fas fa-gem text-purple-600 text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-blue-600 font-medium">Fashion</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <span class="text-sm text-gray-600 ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Tas Rajut Handmade</h3>
+                    <p class="text-gray-600 text-sm mb-4">Tas rajut cantik buatan tangan dengan kualitas premium</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-blue-600">Rp 125.000</span>
+                        <button
+                            class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
+                            Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
+                    <i class="fas fa-seedling text-green-600 text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-blue-600 font-medium">Herbal</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <span class="text-sm text-gray-600 ml-1">4.7</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Jamu Tradisional</h3>
+                    <p class="text-gray-600 text-sm mb-4">Jamu herbal alami untuk kesehatan keluarga</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-blue-600">Rp 35.000</span>
+                        <button
+                            class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
+                            Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
+                    <i class="fas fa-coffee text-yellow-600 text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-blue-600 font-medium">Minuman</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <span class="text-sm text-gray-600 ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kopi Arabika Malang</h3>
+                    <p class="text-gray-600 text-sm mb-4">Kopi premium dari perkebunan lokal Malang</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-blue-600">Rp 85.000</span>
+                        <button
+                            class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">
+                            Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 section-reveal">
+            <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
+                Lihat Semua Produk
+                <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="section-reveal">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+                    Tentang <span class="text-gradient">Platform</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Bergabunglah dengan komunitas UMKM terbaik Kota Malang
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Platform Katalog UMKM Kota Malang adalah inisiatif untuk mendukung dan mempromosikan
+                    produk-produk unggulan dari pelaku usaha mikro, kecil, dan menengah di Kota Malang.
                 </p>
-            </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg p-8 text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-store text-white text-2xl"></i>
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-target text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Visi</h3>
+                            <p class="text-gray-600">Menjadi platform terdepan untuk produk UMKM berkualitas di
+                                Indonesia</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Warung Makan Sari Rasa</h3>
-                    <p class="text-gray-600 mb-4">Kuliner tradisional dengan cita rasa autentik</p>
-                    <div class="flex items-center justify-center space-x-4 mb-4">
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            Jl. Veteran No. 45
-                        </span>
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-phone mr-1"></i>
-                            0812-3456-7890
-                        </span>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-handshake text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Misi</h3>
+                            <p class="text-gray-600">Memberdayakan UMKM lokal dan menghubungkan dengan pasar yang lebih
+                                luas</p>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-center space-x-2">
-                        <a href="#"
-                            class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
-                            <i class="fab fa-facebook-f text-blue-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">
-                            <i class="fab fa-whatsapp text-green-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center hover:bg-pink-200 transition-colors">
-                            <i class="fab fa-instagram text-pink-600 text-sm"></i>
-                        </a>
-                    </div>
-                    <a href="#"
-                        class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                        Lihat Produk <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
                 </div>
 
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg p-8 text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-palette text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Kerajinan Bambu Indah</h3>
-                    <p class="text-gray-600 mb-4">Kerajinan bambu berkualitas tinggi</p>
-                    <div class="flex items-center justify-center space-x-4 mb-4">
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            Jl. Kawi No. 78
-                        </span>
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-phone mr-1"></i>
-                            0813-4567-8901
-                        </span>
-                    </div>
-                    <div class="flex items-center justify-center space-x-2">
-                        <a href="#"
-                            class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
-                            <i class="fab fa-facebook-f text-blue-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">
-                            <i class="fab fa-whatsapp text-green-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center hover:bg-pink-200 transition-colors">
-                            <i class="fab fa-instagram text-pink-600 text-sm"></i>
-                        </a>
-                    </div>
-                    <a href="#"
-                        class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                        Lihat Produk <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg p-8 text-center">
-                    <div
-                        class="w-20 h-20 bg-gradient-to-r from-red-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tshirt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fashion Batik Nusantara</h3>
-                    <p class="text-gray-600 mb-4">Batik modern dengan sentuhan tradisional</p>
-                    <div class="flex items-center justify-center space-x-4 mb-4">
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            Jl. Brawijaya No. 12
-                        </span>
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-phone mr-1"></i>
-                            0811-2222-3333
-                        </span>
-                    </div>
-                    <div class="flex items-center justify-center space-x-2">
-                        <a href="#"
-                            class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
-                            <i class="fab fa-facebook-f text-blue-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">
-                            <i class="fab fa-whatsapp text-green-600 text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center hover:bg-pink-200 transition-colors">
-                            <i class="fab fa-instagram text-pink-600 text-sm"></i>
-                        </a>
-                    </div>
-                    <a href="#"
-                        class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                        Lihat Produk <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 section-reveal">
                 <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
-                    Lihat Semua UMKM
-                    <i class="fas fa-arrow-right ml-2"></i>
+                    Pelajari Lebih Lanjut
                 </button>
             </div>
-        </div>
-    </section>
 
-    <!-- News & Articles -->
-    <section id="news" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Berita & <span class="text-gradient">Artikel</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Informasi terbaru seputar perkembangan UMKM dan tips bisnis
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
-                        <i class="fas fa-newspaper text-blue-600 text-4xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Tips
-                                Bisnis</span>
-                            <span class="text-gray-500 text-sm">2 hari lalu</span>
+            <div class="section-reveal">
+                <div class="relative">
+                    <div
+                        class="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-city text-6xl text-blue-600 mb-4 opacity-50"></i>
+                            <p class="text-xl text-gray-600">Kota Malang</p>
+                            <p class="text-sm text-gray-500">Mendukung UMKM Lokal</p>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            5 Tips Meningkatkan Penjualan UMKM di Era Digital
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Panduan lengkap untuk mengoptimalkan strategi pemasaran digital bagi pelaku UMKM...
-                        </p>
-                        <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                            Baca Selengkapnya
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
                     </div>
-                </div>
 
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
-                        <i class="fas fa-calendar-alt text-green-600 text-4xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <span
-                                class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Event</span>
-                            <span class="text-gray-500 text-sm">1 minggu lalu</span>
+                    <!-- Statistics Cards -->
+                    <div class="absolute -bottom-10 -left-10 bg-white rounded-2xl border border-gray-100 p-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">500+</div>
+                            <div class="text-sm text-gray-600">UMKM Partner</div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            Pelatihan Digital Marketing untuk UMKM Malang
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Workshop gratis bagi pelaku UMKM untuk meningkatkan kemampuan pemasaran online...
-                        </p>
-                        <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                            Baca Selengkapnya
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
                     </div>
-                </div>
 
-                <div class="section-reveal card-hover bg-white rounded-3xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
-                        <i class="fas fa-trophy text-purple-600 text-4xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">Kisah
-                                Sukses</span>
-                            <span class="text-gray-500 text-sm">3 hari lalu</span>
+                    <div class="absolute -top-10 -right-10 bg-white rounded-2xl border border-gray-100 p-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">2000+</div>
+                            <div class="text-sm text-gray-600">Produk Tersedia</div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">
-                            Dari Hobi Menjadi Bisnis: Cerita Sukses UMKM Batik
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Inspirasi dari Bu Sari yang berhasil mengembangkan usaha batik hingga go internasional...
-                        </p>
-                        <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                            Baca Selengkapnya
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Testimoni <span class="text-gradient">Pelanggan</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Apa kata mereka tentang produk UMKM Kota Malang?
-                </p>
+<!-- UMKM Partners -->
+<section id="umkm" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Partner <span class="text-gradient">UMKM</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Bergabunglah dengan komunitas UMKM terbaik Kota Malang
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 p-8 text-center">
+                <div
+                    class="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-store text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Warung Makan Sari Rasa</h3>
+                <p class="text-gray-600 mb-4">Kuliner tradisional dengan cita rasa autentik</p>
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                    <span class="text-sm text-gray-500">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        Jl. Veteran No. 45
+                    </span>
+                    <span class="text-sm text-gray-500">
+                        <i class="fas fa-phone mr-1"></i>
+                        0812-3456-7890
+                    </span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <a href="#"
+                        class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">
+                        <i class="fab fa-whatsapp text-green-600 text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center hover:bg-pink-200 transition-colors">
+                        <i class="fab fa-instagram text-pink-600 text-sm"></i>
+                    </a>
+                </div>
+                <a href="#"
+                    class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                    Lihat Produk <i class="fas fa-arrow-right ml-1"></i>
+                </a>
             </div>
+        </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="section-reveal card-hover bg-gray-50 rounded-3xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                            A
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-bold text-gray-800">Ahmad Wijaya</h4>
-                            <div class="flex items-center">
-                                <div class="flex space-x-1 mr-2">
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                </div>
-                                <span class="text-sm text-gray-600">5.0</span>
-                            </div>
-                        </div>
+        <div class="text-center mt-12 section-reveal">
+            <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
+                Lihat Semua UMKM
+                <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- News & Articles -->
+<section id="news" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Berita & <span class="text-gradient">Artikel</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Informasi terbaru seputar perkembangan UMKM dan tips bisnis
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
+                    <i class="fas fa-newspaper text-blue-600 text-4xl"></i>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Tips
+                            Bisnis</span>
+                        <span class="text-gray-500 text-sm">2 hari lalu</span>
                     </div>
-                    <p class="text-gray-600 italic">
-                        "Produk keripik tempe di sini benar-benar enak! Renyah dan bumbunya pas banget.
-                        Sudah jadi langganan keluarga kami."
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">
+                        5 Tips Meningkatkan Penjualan UMKM di Era Digital
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Panduan lengkap untuk mengoptimalkan strategi pemasaran digital bagi pelaku UMKM...
                     </p>
+                    <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                        Baca Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
+            </div>
 
-                <div class="section-reveal card-hover bg-gray-50 rounded-3xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                            S
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-bold text-gray-800">Siti Nurhaliza</h4>
-                            <div class="flex items-center">
-                                <div class="flex space-x-1 mr-2">
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                </div>
-                                <span class="text-sm text-gray-600">5.0</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "Tas rajutnya cantik banget! Kualitas premium dengan harga yang sangat terjangkau.
-                        Pelayanannya juga ramah dan cepat."
-                    </p>
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
+                    <i class="fas fa-calendar-alt text-green-600 text-4xl"></i>
                 </div>
-
-                <div class="section-reveal card-hover bg-gray-50 rounded-3xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                            B
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-bold text-gray-800">Budi Santoso</h4>
-                            <div class="flex items-center">
-                                <div class="flex space-x-1 mr-2">
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                    <i class="fas fa-star text-gray-300 text-sm"></i>
-                                </div>
-                                <span class="text-sm text-gray-600">4.8</span>
-                            </div>
-                        </div>
+                <div class="p-8">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span
+                            class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Event</span>
+                        <span class="text-gray-500 text-sm">1 minggu lalu</span>
                     </div>
-                    <p class="text-gray-600 italic">
-                        "Platform yang sangat membantu untuk menemukan produk UMKM berkualitas.
-                        Interface-nya mudah digunakan dan informatif."
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">
+                        Pelatihan Digital Marketing untuk UMKM Malang
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Workshop gratis bagi pelaku UMKM untuk meningkatkan kemampuan pemasaran online...
                     </p>
+                    <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                        Baca Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="section-reveal card-hover bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
+                    <i class="fas fa-trophy text-purple-600 text-4xl"></i>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">Kisah
+                            Sukses</span>
+                        <span class="text-gray-500 text-sm">3 hari lalu</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">
+                        Dari Hobi Menjadi Bisnis: Cerita Sukses UMKM Batik
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Inspirasi dari Bu Sari yang berhasil mengembangkan usaha batik hingga go internasional...
+                    </p>
+                    <button class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                        Baca Selengkapnya
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Join UMKM Section -->
-    <section class="py-20 gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-10 right-10 w-64 h-64 bg-white opacity-10 rounded-full animate-float"></div>
-            <div class="absolute bottom-10 left-10 w-80 h-80 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Testimoni <span class="text-gradient">Pelanggan</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Apa kata mereka tentang produk UMKM Kota Malang?
+            </p>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center text-white section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-8">
-                    Bergabung dengan <span class="text-yellow-300">Komunitas UMKM</span>
-                </h2>
-                <p class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
-                    Daftarkan usaha Anda dan jadilah bagian dari ekosistem UMKM terbesar di Kota Malang.
-                    Dapatkan akses ke ribuan pelanggan potensial.
-                </p>
-
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="glass-effect rounded-3xl p-8 text-center">
-                        <div
-                            class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-user-plus text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Daftar Gratis</h3>
-                        <p class="text-blue-100">Pendaftaran mudah dan tanpa biaya untuk UMKM</p>
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="section-reveal card-hover bg-gray-50 rounded-3xl border border-gray-100 p-8">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        A
                     </div>
-
-                    <div class="glass-effect rounded-3xl p-8 text-center">
-                        <div
-                            class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-bold text-gray-800">Ahmad Wijaya</h4>
+                        <div class="flex items-center">
+                            <div class="flex space-x-1 mr-2">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">5.0</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Tingkatkan Penjualan</h3>
-                        <p class="text-blue-100">Jangkauan pasar yang lebih luas untuk produk Anda</p>
-                    </div>
-
-                    <div class="glass-effect rounded-3xl p-8 text-center">
-                        <div
-                            class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-handshake text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Dukungan Penuh</h3>
-                        <p class="text-blue-100">Bantuan teknis dan pelatihan bisnis berkelanjutan</p>
                     </div>
                 </div>
-
-                <button
-                    class="bg-white text-blue-600 px-12 py-4 rounded-full font-bold text-xl hover:bg-blue-50 transition-all transform hover:scale-105">
-                    <i class="fas fa-rocket mr-3"></i>
-                    Daftar Sekarang
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 section-reveal">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Kontak & <span class="text-gradient">Bantuan</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Ada pertanyaan? Tim kami siap membantu Anda 24/7
+                <p class="text-gray-600 italic">
+                    "Produk keripik tempe di sini benar-benar enak! Renyah dan bumbunya pas banget.
+                    Sudah jadi langganan keluarga kami."
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="section-reveal">
-                    <div class="space-y-8">
-                        <div class="flex items-start space-x-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+            <div class="section-reveal card-hover bg-gray-50 rounded-3xl border border-gray-100 p-8">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        S
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-bold text-gray-800">Siti Nurhaliza</h4>
+                        <div class="flex items-center">
+                            <div class="flex space-x-1 mr-2">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Alamat Kantor</h3>
-                                <p class="text-gray-600">
-                                    Jl. Tugu No. 1, Klojen<br>
-                                    Kota Malang, Jawa Timur 65111
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-6">
-                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone text-green-600 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Telepon</h3>
-                                <p class="text-gray-600">
-                                    +62 341 123 4567<br>
-                                    WhatsApp: +62 812 3456 7890
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-6">
-                            <div
-                                class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-purple-600 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
-                                <p class="text-gray-600">
-                                    info@umkmmalang.go.id<br>
-                                    support@umkmmalang.go.id
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-6">
-                            <div
-                                class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-clock text-orange-600 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Jam Operasional</h3>
-                                <p class="text-gray-600">
-                                    Senin - Jumat: 08:00 - 17:00 WIB<br>
-                                    Sabtu: 08:00 - 12:00 WIB
-                                </p>
-                            </div>
+                            <span class="text-sm text-gray-600">5.0</span>
                         </div>
                     </div>
                 </div>
+                <p class="text-gray-600 italic">
+                    "Tas rajutnya cantik banget! Kualitas premium dengan harga yang sangat terjangkau.
+                    Pelayanannya juga ramah dan cepat."
+                </p>
+            </div>
 
-                <div class="section-reveal">
-                    <form class="bg-gray-50 rounded-3xl p-8 space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Nama Lengkap"
-                                class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none">
-                            <input type="email" placeholder="Email"
-                                class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none">
+            <div class="section-reveal card-hover bg-gray-50 rounded-3xl border border-gray-100 p-8">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        B
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-bold text-gray-800">Budi Santoso</h4>
+                        <div class="flex items-center">
+                            <div class="flex space-x-1 mr-2">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-gray-300 text-sm"></i>
+                            </div>
+                            <span class="text-sm text-gray-600">4.8</span>
                         </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic">
+                    "Platform yang sangat membantu untuk menemukan produk UMKM berkualitas.
+                    Interface-nya mudah digunakan dan informatif."
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-                        <input type="text" placeholder="Subjek"
+<!-- Join UMKM Section -->
+<section class="py-20 gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0">
+        <div class="absolute top-10 right-10 w-64 h-64 bg-white opacity-10 rounded-full animate-float"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center text-white section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+                Bergabung dengan <span class="text-yellow-300">Komunitas UMKM</span>
+            </h2>
+            <p class="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
+                Daftarkan usaha Anda dan jadilah bagian dari ekosistem UMKM terbesar di Kota Malang.
+                Dapatkan akses ke ribuan pelanggan potensial.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="glass-effect rounded-3xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-plus text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Daftar Gratis</h3>
+                    <p class="text-blue-100">Pendaftaran mudah dan tanpa biaya untuk UMKM</p>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tingkatkan Penjualan</h3>
+                    <p class="text-blue-100">Jangkauan pasar yang lebih luas untuk produk Anda</p>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-8 text-center">
+                    <div
+                        class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dukungan Penuh</h3>
+                    <p class="text-blue-100">Bantuan teknis dan pelatihan bisnis berkelanjutan</p>
+                </div>
+            </div>
+
+            <button
+                class="bg-white text-blue-600 px-12 py-4 rounded-full font-bold text-xl hover:bg-blue-50 transition-all transform hover:scale-105">
+                <i class="fas fa-rocket mr-3"></i>
+                Daftar Sekarang
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 section-reveal">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Kontak & <span class="text-gradient">Bantuan</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ada pertanyaan? Tim kami siap membantu Anda 24/7
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div class="section-reveal">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Alamat Kantor</h3>
+                            <p class="text-gray-600">
+                                Jl. Tugu No. 1, Klojen<br>
+                                Kota Malang, Jawa Timur 65111
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-green-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Telepon</h3>
+                            <p class="text-gray-600">
+                                +62 341 123 4567<br>
+                                WhatsApp: +62 812 3456 7890
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-purple-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
+                            <p class="text-gray-600">
+                                info@umkmmalang.go.id<br>
+                                support@umkmmalang.go.id
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-orange-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Jam Operasional</h3>
+                            <p class="text-gray-600">
+                                Senin - Jumat: 08:00 - 17:00 WIB<br>
+                                Sabtu: 08:00 - 12:00 WIB
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-reveal">
+                <form class="bg-gray-50 rounded-3xl border border-gray-100 p-8 space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Nama Lengkap"
                             class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none">
+                        <input type="email" placeholder="Email"
+                            class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none">
+                    </div>
 
-                        <textarea rows="6" placeholder="Pesan Anda"
-                            class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none resize-none"></textarea>
+                    <input type="text" placeholder="Subjek"
+                        class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none">
 
-                        <button type="submit"
-                            class="w-full btn-gradient text-white py-4 rounded-2xl font-semibold text-lg">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Kirim Pesan
-                        </button>
-                    </form>
-                </div>
+                    <textarea rows="6" placeholder="Pesan Anda"
+                        class="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-blue-500 focus:outline-none resize-none"></textarea>
+
+                    <button type="submit"
+                        class="w-full btn-gradient text-white py-4 rounded-2xl font-semibold text-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Kirim Pesan
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
