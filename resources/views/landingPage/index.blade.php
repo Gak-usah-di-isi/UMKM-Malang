@@ -211,22 +211,31 @@
         </div>
     </section>
 
-    <!-- Produk Terbaru/Terfavorit -->
-    <section class="py-20 bg-gray-50">
+        <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 section-reveal">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
                     Produk <span class="text-gradient">Terbaru & Terfavorit</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                     Koleksi terbaru dan produk paling diminati dari UMKM Kota Malang
                 </p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex justify-center gap-4 mb-8">
+                    <button id="filterNew" class="filter-btn bg-white text-gray-700 border-2 border-gray-300 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:border-blue-600 hover:text-blue-600">
+                        Produk Terbaru
+                    </button>
+                    <button id="filterFavorite" class="filter-btn bg-white text-gray-700 border-2 border-gray-300 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:border-blue-600 hover:text-blue-600">
+                        Produk Favorit
+                    </button>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
                 <!-- Produk Cards -->
                 <!-- Produk 1 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="baru">
                     <div class="h-48 bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center relative">
                         <i class="fas fa-seedling text-green-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">BARU</span>
@@ -242,13 +251,13 @@
                         <h3 class="text-lg font-bold text-gray-800 mb-2">Jamu Tradisional</h3>
                         <div class="flex items-center justify-between">
                             <span class="text-lg font-bold text-blue-600">Rp 35.000</span>
-                            <button class="bg-blue-600 text-white px-3 py-2 rounded-full text-xs hover:bg-blue-700">Detail</button>
+                            <a href="/product-detail" class="bg-blue-600 text-white px-3 py-2 rounded-full text-xs hover:bg-blue-700">Detail</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Produk 2 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="hot">
                     <div class="h-48 bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center relative">
                         <i class="fas fa-cake text-pink-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">HOT</span>
@@ -270,7 +279,7 @@
                 </div>
 
                 <!-- Produk 3 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="favorit">
                     <div class="h-48 bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center relative">
                         <i class="fas fa-shirt text-blue-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold">FAVORIT</span>
@@ -292,7 +301,7 @@
                 </div>
 
                 <!-- Produk 4 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="baru">
                     <div class="h-48 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center relative">
                         <i class="fas fa-palette text-orange-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">BARU</span>
@@ -314,7 +323,7 @@
                 </div>
 
                 <!-- Produk 5 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="hot">
                     <div class="h-48 bg-gradient-to-br from-teal-200 to-teal-300 flex items-center justify-center relative">
                         <i class="fas fa-leaf text-teal-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">HOT</span>
@@ -336,7 +345,7 @@
                 </div>
 
                 <!-- Produk 6 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="favorit">
                     <div class="h-48 bg-gradient-to-br from-indigo-200 to-indigo-300 flex items-center justify-center relative">
                         <i class="fas fa-mug-hot text-indigo-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold">FAVORIT</span>
@@ -358,7 +367,7 @@
                 </div>
 
                 <!-- Produk 7 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="baru">
                     <div class="h-48 bg-gradient-to-br from-rose-200 to-rose-300 flex items-center justify-center relative">
                         <i class="fas fa-gift text-rose-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">BARU</span>
@@ -380,7 +389,7 @@
                 </div>
 
                 <!-- Produk 8 -->
-                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="section-reveal card-hover bg-white rounded-2xl shadow-lg overflow-hidden product-card" data-category="hot">
                     <div class="h-48 bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center relative">
                         <i class="fas fa-bread-slice text-amber-600 text-4xl"></i>
                         <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">HOT</span>
@@ -410,6 +419,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Agenda Terbaru -->
     <section class="py-20 bg-white">
@@ -791,4 +801,49 @@
             </div>
         </div>
     </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-300');
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                });
+
+                this.classList.add('active');
+                this.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-300');
+                this.classList.add('bg-blue-600', 'text-white');
+
+                let filterCategory = 'all';
+                if (this.id === 'filterNew') {
+                    filterCategory = 'baru';
+                } else if (this.id === 'filterFavorite') {
+                    filterCategory = 'favorit';
+                }
+
+                productCards.forEach(card => {
+                    if (filterCategory === 'all' || card.dataset.category === filterCategory) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+</script>
+
 @endsection

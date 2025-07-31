@@ -466,14 +466,14 @@
                                         </div>
 
                                         <!-- CTA Button -->
-                                        <button class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-3 px-6 rounded-2xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                        <a href="/product-detail" class="flex items-center justify-center gap-2 bg-green-600 text-white font-semibold rounded-full px-4 py-2 hover:bg-green-700 transition-colors duration-300 group">
                                             <span class="flex items-center justify-center gap-2">
                                                 <span class="text-xs">Lihat Detail</span>
                                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                                 </svg>
                                             </span>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
