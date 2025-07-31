@@ -32,6 +32,10 @@ Route::get('/umkm-list', function () {
     return view('landingPage.umkm-list');
 });
 
+Route::get('/detail-umkm', function () {
+    return view('landingPage.detail-umkm');
+});
+
 Route::get('/contact', function () {
     return view('landingPage.contact');
 });
