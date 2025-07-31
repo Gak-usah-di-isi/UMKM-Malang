@@ -13,14 +13,7 @@
     });
 
     // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scroll', 'shadow-sm');
-        } else {
-            navbar.classList.remove('navbar-scroll', 'shadow-sm');
-        }
-    });
+    
 
     // Scroll reveal animation
     function revealSections() {
