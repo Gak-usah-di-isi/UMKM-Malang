@@ -1,15 +1,13 @@
 <!-- Navigation -->
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-sm">
-    <div class="container mx-auto px-6 py-4">
+<nav id="navbar" class="w-full sticky top-0 z-50 transition-all duration-300 bg-white shadow-sm">
+    <div  class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div
-                    class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-store text-white text-xl"></i>
+                <div>
+                    <img src="{{ asset('images/logo_1.svg') }}" alt="UMKM Malang Logo" class="h-[60px] w-lg">
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-gray-800">UMKM Malang</h1>
-                    <p class="text-xs text-gray-600">Produk Lokal Berkualitas</p>
+                    <img src="{{ asset('images/logo2.webp') }}" alt="UMKM Malang Logo" class="h-12 w-lg">
                 </div>
             </div>
 
@@ -36,12 +34,12 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="lg:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300">
+        class="lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300">
         <div class="p-6">
             <button id="close-menu" class="absolute top-6 right-6 text-2xl text-gray-700">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="mt-16 space-y-6">
+            <div class="mt-16 space-y-6 ">
                 <a href="#home" class="block text-xl text-gray-700 hover:text-blue-600">Beranda</a>
                 <a href="#about" class="block text-xl text-gray-700 hover:text-blue-600">Tentang</a>
                 <a href="#products" class="block text-xl text-gray-700 hover:text-blue-600">Produk</a>
