@@ -459,7 +459,7 @@ $umkms = [
                                     </div>
                                 </div>
 
-                                <a href="/detail-umkm" class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-2 px-4 rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300">
+                                <a href="/detail-umkm" class="w-full block text-center mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-2 text-sm px-4 rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300">
                                     Lihat Produk
                                 </a>
                             </div>
