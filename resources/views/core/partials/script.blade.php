@@ -12,9 +12,6 @@
         mobileMenu.classList.add('translate-x-full');
     });
 
-    // Navbar scroll effect
-    
-
     // Scroll reveal animation
     function revealSections() {
         const sections = document.querySelectorAll('.section-reveal');
@@ -29,6 +26,5 @@
         });
     }
 
-    window.addEventListener('scroll', revealSections);
     window.addEventListener('load', revealSections);
 </script>

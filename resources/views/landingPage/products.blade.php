@@ -153,6 +153,16 @@
 @section('content')
 <!-- Background with animated gradients -->
 <div class="min-h-screen py-8 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 relative overflow-hidden">
+
+    <!-- Breadcrumb -->
+    <nav class="flex ml-8 lg:ml-14 text-sm text-gray-600" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li><a href="/" class="hover:text-emerald-600">Beranda</a></li>
+            <li><i class="fas fa-chevron-right text-xs mx-2 text-gray-400"></i></li>
+            <li><a href="/products" class="hover:text-emerald-600">Produk</a></li>
+        </ol>
+    </nav>
+
     <!-- Animated background elements -->
     <div class="absolute inset-0 opacity-30">
         <div class="absolute top-20 left-10 w-32 h-32 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
@@ -466,14 +476,14 @@
                                         </div>
 
                                         <!-- CTA Button -->
-                                        <button class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-3 px-6 rounded-2xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                        <a href="/product-detail" class="flex items-center justify-center gap-2 bg-green-600 text-white font-semibold rounded-full px-4 py-2 hover:bg-green-700 transition-colors duration-300 group">
                                             <span class="flex items-center justify-center gap-2">
                                                 <span class="text-xs">Lihat Detail</span>
                                                 <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                                 </svg>
                                             </span>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
