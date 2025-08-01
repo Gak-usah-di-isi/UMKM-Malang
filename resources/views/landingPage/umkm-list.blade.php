@@ -106,7 +106,6 @@
 
     .umkm-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
     }
 
     .umkm-logo {
@@ -121,7 +120,6 @@
 
     .umkm-card:hover .umkm-logo {
         transform: scale(1.05);
-        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
     }
 
     .umkm-badge {
@@ -284,7 +282,7 @@ $umkms = [
             <aside class="lg:w-3/12 h-fit sticky top-6">
                 <div class="scrollable-sidebar space-y-6 lg:pr-2">
                     <!-- Search Filter -->
-                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition hover:shadow-lg">
+                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center">
                                 <span class="text-white text-sm font-bold">🔍</span>
@@ -302,7 +300,7 @@ $umkms = [
                     </div>
 
                     <!-- Category Filter -->
-                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition hover:shadow-lg">
+                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
                                 <span class="text-white text-sm font-bold">📂</span>
@@ -337,7 +335,7 @@ $umkms = [
                     </div>
 
                     <!-- Location Filter -->
-                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition hover:shadow-lg">
+                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6 transition-all duration-500 transform section-transition">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center">
                                 <span class="text-white text-sm font-bold">📍</span>
@@ -365,7 +363,7 @@ $umkms = [
             <main class="flex-1 w-full md:w-9/12">
                 <div class="scrollable-main">
                     <!-- Hero Banner -->
-                    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 mb-8 transform transition-all duration-500 section-transition hover:shadow-xl">
+                    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 mb-8 transform transition-all duration-500 section-transition ">
                         <div class="absolute inset-0 bg-black/10"></div>
                         <div class="relative p-8">
                             <div class="flex items-center justify-between">
@@ -393,7 +391,7 @@ $umkms = [
                     </div>
 
                     <!-- Content Card -->
-                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-8 section-transition hover:shadow-lg">
+                    <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-8 section-transition">
                         <!-- Filter and view controls -->
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 space-y-4 sm:space-y-0">
                             <div>
@@ -461,9 +459,9 @@ $umkms = [
                                     </div>
                                 </div>
 
-                                <button class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-2 px-4 rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300">
+                                <a href="/detail-umkm" class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-2 px-4 rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300">
                                     Lihat Produk
-                                </button>
+                                </a>
                             </div>
                             @endforeach
                         </section>

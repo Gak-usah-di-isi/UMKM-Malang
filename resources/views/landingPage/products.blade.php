@@ -153,6 +153,16 @@
 @section('content')
 <!-- Background with animated gradients -->
 <div class="min-h-screen py-8 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 relative overflow-hidden">
+
+    <!-- Breadcrumb -->
+    <nav class="flex ml-8 lg:ml-14 text-sm text-gray-600" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li><a href="/" class="hover:text-emerald-600">Beranda</a></li>
+            <li><i class="fas fa-chevron-right text-xs mx-2 text-gray-400"></i></li>
+            <li><a href="/products" class="hover:text-emerald-600">Produk</a></li>
+        </ol>
+    </nav>
+
     <!-- Animated background elements -->
     <div class="absolute inset-0 opacity-30">
         <div class="absolute top-20 left-10 w-32 h-32 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
