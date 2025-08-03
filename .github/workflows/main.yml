@@ -1,4 +1,4 @@
-name: Deploy umkm to vps bbiznet
+name: Deploy Laravel to VPS
 
 on:
   push:
@@ -11,37 +11,24 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.8.1
       with:
-        php-version: '8.2'
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Install PHP dependencies
-      run: composer install --no-interaction --prefer-dist --optimize-autoloader
-
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-
-    - name: Install JS dependencies and build assets
+    - name: Deploy to VPS
       run: |
-        npm install
-        npm run build
-
-    - name: Deploy via SSH
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.PRIVATE_KEY }}
-        script: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
           cd /var/www/UMKM-Malang
           git pull origin main
           composer install --no-interaction --prefer-dist --optimize-autoloader
           php artisan migrate --force
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
           npm install
           npm run build
-          php artisan config:cache
+          chown -R www-data:www-data .
+        EOF
