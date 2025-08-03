@@ -1,101 +1,55 @@
 @extends('core.landingPage')
 
-@section('title', 'UMKM Kota Malang | Contact')
+@section('title', 'UMKM Kota Malang | Kontak')
 
 @section('content')
 <!-- Hero Contact Section -->
-<section
-    class="min-h-[40vh] gradient-bg flex items-center relative overflow-hidden pt-20">
-    <div class="absolute inset-0">
-        <div
-            class="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full animate-float"></div>
-        <div
-            class="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
+<section class="min-h-[40vh] bg-gradient-to-br from-green-600 to-emerald-600 flex items-center relative overflow-hidden pt-20">
+    <!-- Simplified background elements -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-white rounded-full mix-blend-overlay animate-blob"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-emerald-200 rounded-full mix-blend-overlay animate-blob animation-delay-3000"></div>
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center text-white py-12">
-            <div class="section-reveal">
-                <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                    Hubungi <span class="text-yellow-300">Kami</span>
-                </h1>
-                <p class="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-                    Kami siap membantu Anda kapan saja
-                </p>
-            </div>
+    <div class="container mx-auto px-4 sm:px-6 relative z-10 scale-90 origin-top">
+        <div class="text-center text-white py-12 section-reveal">
+            <h1 class="text-3xl lg:text-4xl font-bold leading-tight mb-4">
+                Hubungi <span class="text-yellow-300">Kami</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-emerald-100 max-w-2xl mx-auto">
+                Tim kami siap membantu Anda kapan saja
+            </p>
         </div>
     </div>
 </section>
 
 <!-- Contact Section -->
 <section class="py-12 bg-white">
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-4 sm:px-6 scale-90 origin-top">
         <div class="flex items-center text-sm text-gray-600 mb-4">
-            <a href="index.html" class="hover:text-blue-600">Beranda</a>
+            <a href="/" class="hover:text-emerald-600">Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-gray-400">Kontak</span>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12">
-            <div class="section-reveal">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8">
-                    Kirim Pesan kepada Kami
-                </h2>
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2">Nama Lengkap</label>
-                            <input
-                                type="text"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none" />
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2">Email</label>
-                            <input
-                                type="email"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none" />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 mb-2">Subjek</label>
-                        <input
-                            type="text"
-                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none" />
-                    </div>
-
-                    <div>
-                        <label class="block text-gray-700 mb-2">Pesan</label>
-                        <textarea
-                            rows="5"
-                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none"></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="btn-gradient text-white px-6 py-3 rounded-xl font-medium">
-                        Kirim Pesan
-                    </button>
-                </form>
-            </div>
-
-            <div class="section-reveal">
-                <div class="bg-gray-50 rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-8">
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
+            <!-- Contact Information (Now on the left) -->
+            <div class="section-reveal order-1">
+                <div class="bg-emerald-50 rounded-2xl p-6 md:p-8 border border-emerald-100">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
                         Informasi Kontak
                     </h2>
 
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-emerald-600 text-sm"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">
                                     Alamat Kantor
                                 </h3>
-                                <p class="text-gray-600">
+                                <p class="text-gray-600 text-sm">
                                     Jl. Tugu No. 1, Klojen<br />
                                     Kota Malang, Jawa Timur 65111
                                 </p>
@@ -103,15 +57,14 @@
                         </div>
 
                         <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone-alt text-green-600"></i>
+                            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-emerald-600 text-sm"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">
                                     Telepon & WhatsApp
                                 </h3>
-                                <p class="text-gray-600">
+                                <p class="text-gray-600 text-sm">
                                     +62 341 123 4567<br />
                                     WhatsApp: +62 812 3456 7890
                                 </p>
@@ -119,15 +72,14 @@
                         </div>
 
                         <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-purple-600"></i>
+                            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-emerald-600 text-sm"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">
                                     Email
                                 </h3>
-                                <p class="text-gray-600">
+                                <p class="text-gray-600 text-sm">
                                     info@umkmmalang.go.id<br />
                                     support@umkmmalang.go.id
                                 </p>
@@ -135,86 +87,125 @@
                         </div>
 
                         <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-clock text-orange-600"></i>
+                            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-emerald-600 text-sm"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">
                                     Jam Operasional
                                 </h3>
-                                <p class="text-gray-600">
-                                    Senin - Jumat: 08:00 - 17:00 WIB<br />
-                                    Sabtu: 08:00 - 12:00 WIB
+                                <p class="text-gray-600 text-sm">
+                                    Senin-Jumat: 08:00-17:00 WIB<br />
+                                    Sabtu: 08:00-12:00 WIB
                                 </p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Social Media -->
                     <div class="mt-8">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                        <h3 class="text-base font-semibold text-gray-800 mb-3">
                             Media Sosial
                         </h3>
-                        <div class="flex space-x-4">
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-facebook-f text-white"></i>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-9 h-9 bg-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-700 transition-colors">
+                                <i class="fab fa-facebook-f text-white text-xs"></i>
                             </a>
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                                <i class="fab fa-instagram text-white"></i>
+                            <a href="#" class="w-9 h-9 bg-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-700 transition-colors">
+                                <i class="fab fa-instagram text-white text-xs"></i>
                             </a>
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                                <i class="fab fa-twitter text-white"></i>
+                            <a href="#" class="w-9 h-9 bg-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-700 transition-colors">
+                                <i class="fab fa-twitter text-white text-xs"></i>
                             </a>
-                            <a
-                                href="#"
-                                class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                <i class="fab fa-youtube text-white"></i>
+                            <a href="#" class="w-9 h-9 bg-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-700 transition-colors">
+                                <i class="fab fa-youtube text-white text-xs"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="mt-12 section-reveal">
-            <div
-                class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-                <i class="fas fa-map-marker-alt text-4xl text-blue-600"></i>
+                <!-- Map Placeholder -->
+                <div class="mt-6 bg-gray-100 rounded-xl h-64 flex items-center justify-center border border-gray-200">
+                    <div class="text-center text-gray-500">
+                        <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mb-3"></i>
+                        <p class="text-sm">Peta Lokasi Kantor UMKM Kota Malang</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form (Now on the right) -->
+            <div class="section-reveal order-2">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    Kirim Pesan kepada Kami
+                </h2>
+                <form class="space-y-5">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm text-gray-700 mb-2">Nama Lengkap</label>
+                            <input
+                                type="text"
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:outline-none transition-all text-sm"
+                                placeholder="Nama lengkap Anda" />
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-700 mb-2">Email</label>
+                            <input
+                                type="email"
+                                class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:outline-none transition-all text-sm"
+                                placeholder="Alamat email Anda" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-2">Subjek</label>
+                        <input
+                            type="text"
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:outline-none transition-all text-sm"
+                            placeholder="Subjek pesan Anda" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-2">Pesan</label>
+                        <textarea
+                            rows="4"
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200 focus:outline-none transition-all text-sm"
+                            placeholder="Tulis pesan Anda secara detail"></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-5 py-2.5 rounded-lg font-medium hover:shadow-md transition-all transform hover:scale-[1.02] text-sm">
+                        Kirim Pesan
+                    </button>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+<section class="py-12 bg-emerald-50">
+    <div class="container mx-auto px-4 sm:px-6 scale-90 origin-top">
+        <div class="text-center mb-10 section-reveal">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">
                 Pertanyaan yang Sering Diajukan
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
+            <p class="text-gray-600 text-sm max-w-xl mx-auto">
                 Temukan jawaban atas pertanyaan umum seputar platform kami
             </p>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-4">
-            <div
-                class="section-reveal bg-white rounded-2xl shadow-md overflow-hidden">
-                <button
-                    class="w-full flex justify-between items-center p-6 text-left">
-                    <h3 class="text-lg font-semibold text-gray-800">
+        <div class="max-w-2xl mx-auto space-y-3">
+            <!-- FAQ Item 1 -->
+            <div class="section-reveal bg-white rounded-lg shadow-xs overflow-hidden border border-gray-200 hover:border-emerald-300 transition-all">
+                <button class="w-full flex justify-between items-center p-5 text-left faq-toggle group">
+                    <h3 class="text-base font-semibold text-gray-800 group-hover:text-emerald-600 transition-colors">
                         Bagaimana cara mendaftarkan UMKM saya?
                     </h3>
-                    <i class="fas fa-chevron-down text-blue-600"></i>
+                    <i class="fas fa-chevron-down text-emerald-600 text-xs transition-transform"></i>
                 </button>
-                <div class="px-6 pb-6 hidden">
-                    <p class="text-gray-600">
+                <div class="px-5 pb-5 hidden faq-content">
+                    <p class="text-gray-600 text-sm">
                         Anda bisa mendaftarkan UMKM Anda dengan mengisi formulir
                         pendaftaran di halaman "Gabung UMKM". Setelah mengisi data
                         lengkap, tim kami akan memverifikasi dan mengaktifkan akun UMKM
@@ -223,17 +214,16 @@
                 </div>
             </div>
 
-            <div
-                class="section-reveal bg-white rounded-2xl shadow-md overflow-hidden">
-                <button
-                    class="w-full flex justify-between items-center p-6 text-left">
-                    <h3 class="text-lg font-semibold text-gray-800">
+            <!-- FAQ Item 2 -->
+            <div class="section-reveal bg-white rounded-lg shadow-xs overflow-hidden border border-gray-200 hover:border-emerald-300 transition-all">
+                <button class="w-full flex justify-between items-center p-5 text-left faq-toggle group">
+                    <h3 class="text-base font-semibold text-gray-800 group-hover:text-emerald-600 transition-colors">
                         Apakah ada biaya untuk mendaftar?
                     </h3>
-                    <i class="fas fa-chevron-down text-blue-600"></i>
+                    <i class="fas fa-chevron-down text-emerald-600 text-xs transition-transform"></i>
                 </button>
-                <div class="px-6 pb-6 hidden">
-                    <p class="text-gray-600">
+                <div class="px-5 pb-5 hidden faq-content">
+                    <p class="text-gray-600 text-sm">
                         Tidak, pendaftaran UMKM di platform kami sepenuhnya gratis. Kami
                         berkomitmen untuk mendukung perkembangan UMKM tanpa membebani
                         biaya.
@@ -241,79 +231,154 @@
                 </div>
             </div>
 
-            <div
-                class="section-reveal bg-white rounded-2xl shadow-md overflow-hidden">
-                <button
-                    class="w-full flex justify-between items-center p-6 text-left">
-                    <h3 class="text-lg font-semibold text-gray-800">
+            <!-- FAQ Item 3 -->
+            <div class="section-reveal bg-white rounded-lg shadow-xs overflow-hidden border border-gray-200 hover:border-emerald-300 transition-all">
+                <button class="w-full flex justify-between items-center p-5 text-left faq-toggle group">
+                    <h3 class="text-base font-semibold text-gray-800 group-hover:text-emerald-600 transition-colors">
                         Bagaimana cara mempromosikan produk saya?
                     </h3>
-                    <i class="fas fa-chevron-down text-blue-600"></i>
+                    <i class="fas fa-chevron-down text-emerald-600 text-xs transition-transform"></i>
                 </button>
-                <div class="px-6 pb-6 hidden">
-                    <p class="text-gray-600">
+                <div class="px-5 pb-5 hidden faq-content">
+                    <p class="text-gray-600 text-sm">
                         Setelah akun UMKM Anda aktif, Anda bisa mengunggah produk dengan
                         foto dan deskripsi yang menarik. Produk unggulan akan
-                        ditampilkan di halaman depan secara berkala. Kami juga
-                        menyediakan layanan promosi berbayar dengan jangkauan lebih
-                        luas.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="section-reveal bg-white rounded-2xl shadow-md overflow-hidden">
-                <button
-                    class="w-full flex justify-between items-center p-6 text-left">
-                    <h3 class="text-lg font-semibold text-gray-800">
-                        Apakah ada pelatihan untuk UMKM?
-                    </h3>
-                    <i class="fas fa-chevron-down text-blue-600"></i>
-                </button>
-                <div class="px-6 pb-6 hidden">
-                    <p class="text-gray-600">
-                        Ya, kami secara rutin menyelenggarakan pelatihan gratis untuk
-                        UMKM terdaftar, meliputi digital marketing, pengembangan produk,
-                        manajemen keuangan, dan lainnya. Informasi pelatihan bisa
-                        dilihat di halaman "Berita & Artikel".
+                        ditampilkan di halaman depan secara berkala.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-8">
-            <a
-                href="faq.html"
-                class="text-blue-600 hover:text-blue-800 font-medium">
-                Lihat Semua FAQ <i class="fas fa-arrow-right ml-2"></i>
+        <div class="text-center mt-6 section-reveal">
+            <a href="#" class="text-emerald-600 hover:text-emerald-800 font-medium inline-flex items-center text-sm">
+                Lihat Semua FAQ <i class="fas fa-arrow-right ml-1.5 text-xs transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0">
-        <div
-            class="absolute top-10 right-10 w-64 h-64 bg-white opacity-10 rounded-full animate-float"></div>
-        <div
-            class="absolute bottom-10 left-10 w-80 h-80 bg-white opacity-5 rounded-full animate-bounce-slow"></div>
+<section class="py-14 bg-gradient-to-br from-green-600 to-emerald-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 right-10 w-28 h-28 bg-white rounded-full mix-blend-overlay animate-blob"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 bg-emerald-200 rounded-full mix-blend-overlay animate-blob animation-delay-2000"></div>
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center text-white">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+    <div class="container mx-auto px-4 sm:px-6 relative z-10 scale-90 origin-top">
+        <div class="text-center text-white section-reveal">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4">
                 Butuh Bantuan Lebih Lanjut?
             </h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Hubungi tim support kami yang siap membantu Anda kapan saja
+            <p class="text-lg text-emerald-100 mb-6 max-w-xl mx-auto">
+                Hubungi tim support kami yang siap membantu Anda
             </p>
-            <button
-                class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all transform hover:scale-105">
-                <i class="fas fa-headset mr-2"></i>
+            <button class="bg-white text-emerald-600 px-6 py-2.5 rounded-full font-medium text-base hover:bg-gray-50 transition-all transform hover:scale-105">
+                <i class="fas fa-headset mr-2 text-sm"></i>
                 Hubungi Support
             </button>
         </div>
     </div>
 </section>
+
+<!-- Styles -->
+<style>
+    /* Animation optimizations */
+    .section-reveal {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .section-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Blob animation - simplified */
+    @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(15px, -15px) scale(1.03); }
+        100% { transform: translate(0px, 0px) scale(1); }
+    }
+
+    .animate-blob {
+        animation: blob 10s infinite ease-in-out;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    
+    .animation-delay-3000 {
+        animation-delay: 3s;
+    }
+
+    /* FAQ toggle animation */
+    .faq-toggle .fa-chevron-down {
+        transition: transform 0.25s ease;
+    }
+    
+    .faq-toggle.active .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    /* Performance optimizations */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .section-reveal {
+            opacity: 1;
+            transform: none;
+        }
+    }
+</style>
+
+<!-- Optimized JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for section reveals
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    // Observe all sections
+    document.querySelectorAll('.section-reveal').forEach(section => {
+        observer.observe(section);
+    });
+
+    // FAQ toggle functionality
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', function() {
+            const faqItem = this.closest('.bg-white');
+            const content = faqItem.querySelector('.faq-content');
+            const icon = this.querySelector('i');
+            
+            // Toggle active class
+            this.classList.toggle('active');
+            
+            // Toggle content
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+                setTimeout(() => {
+                    content.classList.add('hidden');
+                }, 250);
+            }
+        });
+    });
+});
+</script>
 @endsection
