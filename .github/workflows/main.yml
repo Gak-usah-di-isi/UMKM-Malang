@@ -31,10 +31,14 @@ jobs:
 
       - name: Sync files to VPS using rsync
         run: |
-          rsync -avz --exclude=node_modules \
-                     --exclude=.git \
-                     --exclude=storage/logs \
-                     ./ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/UMKM-Malang
+            rsync -avz --verbose \
+            --exclude=node_modules \
+            --exclude=.git \
+            --exclude=storage/logs \
+            --exclude=storage/framework/cache \
+            --exclude=storage/framework/sessions \
+            --exclude=bootstrap/cache/*.php \
+            ./ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/UMKM-Malang || true
 
       - name: Run Laravel commands on VPS
         run: |
