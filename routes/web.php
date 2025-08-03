@@ -28,6 +28,10 @@ Route::get('/articles', function () {
     return view('landingPage.articles');
 });
 
+Route::get('/detail-article', function () {
+    return view('landingPage.detail-article');
+});
+
 Route::get('/umkm-list', function () {
     return view('landingPage.umkm-list');
 });
