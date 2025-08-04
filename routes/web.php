@@ -44,9 +44,15 @@ Route::get('/contact', function () {
     return view('landingPage.contact');
 });
 
+Route::get('/register-account', function () {
+    return view('landingPage.register');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::get('/product-detail', [DetailProduct::class, 'index'])->name('product.detail');
 
