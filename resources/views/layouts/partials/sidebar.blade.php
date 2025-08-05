@@ -2,9 +2,9 @@
     class="fixed left-0 top-0 z-50 flex h-screen w-[290px] flex-col overflow-y-hidden bg-white border-r border-gray-200 px-6 shadow-lg transition-all duration-300 sidebar-expanded lg:static lg:translate-x-0">
     <!-- SIDEBAR HEADER -->
     <div id="sidebar-header" class="flex items-center gap-3 pt-8 pb-8 justify-between border-b border-gray-100">
-        <a href="#" class="flex items-center gap-3">
-            <div class="logo-gradient p-2 rounded-xl">
-                <span id="logo-text">UMKM</span>
+        <a href="#" class="flex items-center gap-2">
+            <div class="logo-gradient rounded-xl">
+                <img src="{{ asset('images/logo_1.svg') }}" alt="Logo" class="h-14" />
             </div>
             <div id="logo-text" class="text-gray-900">
                 <h1 class="text-xl font-bold">Malang</h1>
