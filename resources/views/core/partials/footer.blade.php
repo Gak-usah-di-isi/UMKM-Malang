@@ -1,13 +1,15 @@
 <!-- Footer -->
-<footer class="bg-gray-900 text-white py-16">
+<footer class="bg-gray-900 text-white py-10">
     <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-4 gap-12">
             <div>
-                <div class="flex items-center space-x-3 mb-6">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-store text-white text-xl"></i>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="flex items-center space-x-3">
+                        <div>
+                            <img src="{{ asset('images/logo_1.svg') }}" alt="UMKM Malang Logo" class="h-[60px] w-auto">
+                        </div>
                     </div>
+
                     <div>
                         <h1 class="text-xl font-bold">UMKM Malang</h1>
                         <p class="text-xs text-gray-400">Produk Lokal Berkualitas</p>

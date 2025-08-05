@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer('umkm_category_id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('tagline')->nullable();
-            $table->year('established_year');
+            $table->date('established_year');
             $table->string('address');
             $table->string('district');
             $table->string('logo')->nullable();
