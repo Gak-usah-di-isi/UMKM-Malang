@@ -9,6 +9,7 @@
     <title>
         @yield('title')
     </title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo_1.svg') }}">
     <style>
         :root {
             --font-outfit: "Outfit", sans-serif;

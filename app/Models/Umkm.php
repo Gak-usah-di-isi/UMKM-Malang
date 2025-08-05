@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Umkm extends Model
 {
@@ -24,6 +25,19 @@ class Umkm extends Model
         'verification_status',
         'google_maps',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($umkm) {
+            $umkm->slug = Str::slug($umkm->name);
+        });
+
+        static::updating(function ($umkm) {
+            $umkm->slug = Str::slug($umkm->name);
+        });
+    }
 
     public function user()
     {

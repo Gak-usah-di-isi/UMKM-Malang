@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailProduct;
+use App\Http\Controllers\RegisteredUmkmController;
 
 Route::get('/', function () {
     return view('landingPage.index');
@@ -44,22 +45,29 @@ Route::get('/contact', function () {
     return view('landingPage.contact');
 });
 
-Route::get('/register-account', function () {
-    return view('landingPage.register');
-});
-
-Route::get('/login-account', function () {
-    return view('landingPage.login');
-});
-
 Route::get('/product-detail', function () {
     return view('landingPage.productDetail');
 });
 
+Route::get('/daftar-umkm', function () {
+    return view('umkmRegistration.daftar-umkm');
+});
+
+Route::get('/verifikasi-umkm', function () {
+    return view('umkmRegistration.verifikasi');
+});
+
+
+Route::prefix('user')->middleware('auth')->group(function () {
+    Route::get('/pengajuan-umkm', [RegisteredUmkmController::class, 'create'])->name('pengajuan-umkm.create');
+    Route::post('/pengajuan-umkm', [RegisteredUmkmController::class, 'store'])->name('pengajuan-umkm.store');
+    Route::get('/verifikasi-umkm', [RegisteredUmkmController::class, 'index'])->name('verifikasi-umkm');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
