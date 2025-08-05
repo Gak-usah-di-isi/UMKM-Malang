@@ -44,6 +44,10 @@ Route::get('/contact', function () {
     return view('landingPage.contact');
 });
 
+Route::get('/register-account', function () {
+    return view('landingPage.register');
+});
+
 Route::get('/product-detail', function () {
     return view('landingPage.productDetail');
 });
@@ -51,6 +55,7 @@ Route::get('/product-detail', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -1,9 +1,6 @@
 @extends('core.landingPage')
 
 @section('title', 'UMKM Kota Malang | Articles')
-
-@section('content')
-
 @section('style')
 <style>
     @keyframes blob {
@@ -156,7 +153,7 @@
     }
 </style>
 @endsection
-
+@section('content')
 <!-- Background with animated green gradients -->
 <div class="min-h-screen py-8 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 relative overflow-hidden">
 
