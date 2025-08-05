@@ -72,6 +72,7 @@
             }
         }
     </style>
+    @include('layouts.partials.link')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
