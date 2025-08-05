@@ -48,6 +48,10 @@ Route::get('/register-account', function () {
     return view('landingPage.register');
 });
 
+Route::get('/login-account', function () {
+    return view('landingPage.login');
+});
+
 Route::get('/product-detail', function () {
     return view('landingPage.productDetail');
 });
