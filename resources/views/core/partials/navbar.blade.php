@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav id="navbar" class="w-full sticky top-0 z-50 transition-all duration-300 bg-white shadow-sm">
-    <div  class="container mx-auto px-6 py-4">
+    <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div>
@@ -20,7 +20,8 @@
                 <a href="/umkm-list" class="nav-link text-gray-700 hover:text-green-600 transition-colors">UMKM</a>
                 <a href="/articles" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Berita</a>
                 <a href="/contact" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Kontak</a>
-                <button class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full font-medium">
+                <button
+                    class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full font-medium">
                     Gabung UMKM
                 </button>
             </div>
@@ -40,14 +41,15 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="mt-16 space-y-6 ">
-                <a href="#home" class="block text-xl text-gray-700 hover:text-green-600">Beranda</a>
-                <a href="#about" class="block text-xl text-gray-700 hover:text-green-600">Tentang</a>
-                <a href="#products" class="block text-xl text-gray-700 hover:text-green-600">Produk</a>
-                <a href="#categories" class="block text-xl text-gray-700 hover:text-green-600">Kategori</a>
-                <a href="#umkm" class="block text-xl text-gray-700 hover:text-green-600">UMKM</a>
-                <a href="#news" class="block text-xl text-gray-700 hover:text-green-600">Berita</a>
-                <a href="#contact" class="block text-xl text-gray-700 hover:text-green-600">Kontak</a>
-                <button class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-full font-medium mt-6">
+                <a href="/" class="block text-xl text-gray-700 hover:text-green-600">Beranda</a>
+                <a href="/about" class="block text-xl text-gray-700 hover:text-green-600">Tentang</a>
+                <a href="/products" class="block text-xl text-gray-700 hover:text-green-600">Produk</a>
+                <a href="/categories" class="block text-xl text-gray-700 hover:text-green-600">Kategori</a>
+                <a href="/umkm-list" class="block text-xl text-gray-700 hover:text-green-600">UMKM</a>
+                <a href="/articles" class="block text-xl text-gray-700 hover:text-green-600">Berita</a>
+                <a href="/contact" class="block text-xl text-gray-700 hover:text-green-600">Kontak</a>
+                <button
+                    class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-full font-medium mt-6">
                     Gabung UMKM
                 </button>
             </div>
