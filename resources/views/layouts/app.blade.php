@@ -1,36 +1,94 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+        @yield('title')
+    </title>
+    <style>
+        :root {
+            --font-outfit: "Outfit", sans-serif;
+        }
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        .sidebar-collapsed {
+            transform: translateX(-100%);
+        }
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+        .sidebar-expanded {
+            transform: translateX(0);
+        }
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+        @media (min-width: 1024px) {
+            .sidebar-collapsed {
+                transform: translateX(0);
+                width: 90px !important;
+            }
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            .sidebar-expanded {
+                width: 290px !important;
+            }
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .menu-item-active {
+            background: linear-gradient(135deg, #667eea 0%);
+            color: white;
+        }
+
+        .menu-item-active svg {
+            color: white;
+        }
+
+        .menu-hover:hover {
+            background: #f3f4f6;
+            transform: translateX(4px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-hover:hover svg {
+            color: #667eea;
+        }
+
+        .menu-hover:hover .menu-label {
+            color: #667eea;
+        }
+
+        @media (max-width: 1023px) {
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 40;
+            }
+        }
+    </style>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body class="bg-gray-50" style="font-family: var(--font-outfit)">
+    <div id="sidebar-overlay" class="sidebar-overlay hidden lg:hidden"></div>
+
+    <div class="flex h-screen overflow-hidden">
+        @include('layouts.partials.sidebar')
+        <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+            @include('layouts.partials.header')
+
+            <main class="flex-1 p-6">
+                @yield('content')
             </main>
         </div>
-    </body>
+    </div>
+    @include('layouts.partials.script')
+</body>
+
 </html>
