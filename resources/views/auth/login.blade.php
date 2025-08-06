@@ -97,7 +97,8 @@
                     </div>
 
                     <div class="text-center text-sm text-gray-600">
-                        Belum punya akun? <a href="" class="text-emerald-600 font-medium hover:underline">Daftar
+                        Belum punya akun? <a href="{{ route('register') }}"
+                            class="text-emerald-600 font-medium hover:underline">Daftar
                             sekarang</a>
                     </div>
                 </form>

@@ -1,4 +1,4 @@
-@extends('umkmRegistration.main')
+@extends('umkm-registration.main')
 
 @section('title', 'Daftar UMKM')
 
@@ -183,7 +183,7 @@
                 </div>
 
                 <div class="space-y-4">
-                    <a href="{{ route('dashboard') }}"
+                    <a href="{{ route('home') }}"
                         class="w-full inline-block bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                         <i class="fas fa-home mr-3"></i>
                         Kembali ke Beranda
