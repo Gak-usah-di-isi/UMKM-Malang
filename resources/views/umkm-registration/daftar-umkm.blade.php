@@ -1,4 +1,4 @@
-@extends('umkmRegistration.main')
+@extends('umkm-registration.main')
 
 @section('title', 'Daftar UMKM')
 

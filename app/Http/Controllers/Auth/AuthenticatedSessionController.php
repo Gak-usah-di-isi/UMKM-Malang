@@ -38,7 +38,12 @@ class AuthenticatedSessionController extends Controller
 
         $umkm = ['umkm'];
         if (array_intersect($roles, $umkm)) {
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/umkm/dashboard');
+        }
+
+        $admin = ['admin'];
+        if (array_intersect($roles, $admin)) {
+            return redirect()->intended('/admin/dashboard');
         }
     }
 

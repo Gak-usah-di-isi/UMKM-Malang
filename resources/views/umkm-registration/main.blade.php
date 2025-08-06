@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen">
-    @include('umkmRegistration.partials.navbar')
+    @include('umkm-registration.partials.navbar')
     @yield('content')
     @include('core.partials.footer')
 </body>

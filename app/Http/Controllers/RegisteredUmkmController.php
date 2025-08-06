@@ -15,7 +15,7 @@ class RegisteredUmkmController extends Controller
     public function index()
     {
         $umkms = Umkm::where('user_id', auth()->id())->get();
-        return view('umkmRegistration.verifikasi', compact('umkms'));
+        return view('umkm-registration.verifikasi', compact('umkms'));
     }
 
     public function create()
@@ -28,7 +28,7 @@ class RegisteredUmkmController extends Controller
         }
 
         $categories = UmkmCategory::all();
-        return view('umkmRegistration.daftar-umkm', compact('categories'));
+        return view('umkm-registration.daftar-umkm', compact('categories'));
     }
 
     public function store(Request $request)
