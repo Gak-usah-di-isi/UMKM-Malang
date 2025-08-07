@@ -7,6 +7,8 @@ use App\Http\Controllers\RegisteredUmkmController;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
+use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 
 Route::get('/', function () {
@@ -76,11 +78,33 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/umkm-verification/{slug}', [UmkmVerificationController::class, 'show'])->name('admin.umkm-verification.show');
     Route::patch('/umkm-verification/{slug}/verified', [UmkmVerificationController::class, 'verified'])->name('admin.umkm-verification.verified');
     Route::patch('/umkm-verification/{slug}/rejected', [UmkmVerificationController::class, 'rejected'])->name('admin.umkm-verification.rejected');
+
+    Route::resource('product-category', \App\Http\Controllers\Admin\ProductCategoryController::class)
+        ->parameters(['product-category' => 'id'])
+        ->names('admin.product-category');
+
+    Route::prefix('product-category')->name('admin.product-category.')->group(function () {
+        Route::get('trashed', [\App\Http\Controllers\Admin\ProductCategoryController::class, 'trashed'])
+            ->name('trashed');
+        Route::post('{id}/restore', [\App\Http\Controllers\Admin\ProductCategoryController::class, 'restore'])
+            ->name('restore');
+        Route::delete('{id}/force-delete', [\App\Http\Controllers\Admin\ProductCategoryController::class, 'forceDelete'])
+            ->name('force-delete');
+    });
 });
 
 
 Route::prefix('umkm')->middleware(['auth', 'role:umkm'])->group(function () {
     Route::get('/dashboard', [UmkmDashboardController::class, 'index'])->name('umkm.dashboard');
+    Route::resource('products', ProductController::class)->names([
+        'index' => 'products.index',
+        'create' => 'products.create',
+        'store' => 'products.store',
+        'show' => 'products.show',
+        'edit' => 'products.edit',
+        'update' => 'products.update',
+        'destroy' => 'products.destroy'
+    ]);
 });
 
 Route::get('/user/umkm-saya', function () {

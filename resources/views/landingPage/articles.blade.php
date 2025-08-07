@@ -1,7 +1,7 @@
 @extends('core.landingPage')
 
-@section('title', 'UMKM Kota Malang | Articles')
-@section('style')
+@section('title', 'UMKM Kota Malang | Articles'
+@@section('style')
 <style>
     @keyframes blob {
         0% {
@@ -705,6 +705,34 @@
                         <div class="flex justify-center mt-12">
                             <button class="group green-gradient-bg text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                 <span class="flex items-center gap-2">
+                                    <span>Muat Artikel Lainnya</span>
+                                    <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+                        <span class="flex items-center gap-2">
+                                    <span>Muat Artikel Lainnya</span>
+                                    <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+                        <span class="flex items-center gap-2">
                                     <span>Muat Artikel Lainnya</span>
                                     <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
