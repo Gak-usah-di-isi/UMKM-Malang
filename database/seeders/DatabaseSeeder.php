@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LaratrustSeeder::class,
             UmkmCategorySeeder::class,
+            ProductCategorySeeder::class,
         ]);
     }
 }
