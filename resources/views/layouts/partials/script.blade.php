@@ -118,6 +118,19 @@
             }
         });
     });
+
+    document.getElementById('logo-input').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('logo-preview').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        } else {
+            alert('File harus berupa gambar (jpg, png, jpeg)');
+        }
+    });
 </script>
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->string('tagline')->nullable();
+            $table->text('tagline')->nullable();
             $table->date('established_year');
             $table->string('address');
             $table->string('district');
