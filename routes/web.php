@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisteredUmkmController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
+use App\Http\Controllers\Umkm\UmkmProfileController;
 
 Route::get('/', function () {
     return view('landingPage.index');
@@ -81,6 +82,9 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
 
 Route::prefix('umkm')->middleware(['auth', 'role:umkm'])->group(function () {
     Route::get('/dashboard', [UmkmDashboardController::class, 'index'])->name('umkm.dashboard');
+
+    Route::get('/profil-umkm', [UmkmProfileController::class, 'edit'])->name('umkm.profile.edit');
+    Route::post('/profil-umkm', [UmkmProfileController::class, 'update'])->name('umkm.profile.update');
 });
 
 Route::get('/user/umkm-saya', function () {
