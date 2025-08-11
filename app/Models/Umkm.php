@@ -54,11 +54,6 @@ class Umkm extends Model
         return $this->hasMany(UmkmDocument::class);
     }
 
-    public function hours()
-    {
-        return $this->hasMany(UmkmHour::class);
-    }
-
     public function photos()
     {
         return $this->hasMany(UmkmPhoto::class);
