@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
+use App\Http\Controllers\Umkm\UmkmGalleryController;
 
 Route::get('/', function () {
     return view('landingPage.index');
@@ -85,6 +86,10 @@ Route::prefix('umkm')->middleware(['auth', 'role:umkm'])->group(function () {
 
     Route::get('/profil-umkm', [UmkmProfileController::class, 'edit'])->name('umkm.profile.edit');
     Route::post('/profil-umkm', [UmkmProfileController::class, 'update'])->name('umkm.profile.update');
+
+    Route::get('/galeri-umkm', [UmkmGalleryController::class, 'index'])->name('umkm.gallery.index');
+    Route::post('/galeri-umkm/upload', [UmkmGalleryController::class, 'upload'])->name('umkm.gallery.upload');
+    Route::delete('/galeri-umkm/{photo}', [UmkmGalleryController::class, 'destroy'])->name('umkm.gallery.destroy');
 });
 
 Route::get('/user/umkm-saya', function () {
