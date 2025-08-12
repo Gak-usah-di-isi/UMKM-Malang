@@ -176,7 +176,7 @@
 
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Main Content -->
-            <main class="flex-5 scrollable-main">
+            <main class="w-full md:w-8/12 scrollable-main">
                 <div class="glass rounded-3xl overflow-hidden mb-8">
                     <!-- Article Header -->
                     <div class="relative">
@@ -477,7 +477,7 @@
             </main>
 
             <!-- Sidebar -->
-            <aside class="flex-2 lg:w-4/12 space-y-6 scrollable-sidebar">
+            <aside class="w-full md:w-4/12 space-y-6 scrollable-sidebar">
                 <!-- About Author -->
                 <div class="glass rounded-3xl p-6">
                     <h3 class="font-bold text-xl green-gradient-text mb-4">Tentang Penulis</h3>

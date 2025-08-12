@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('content');
             $table->string('thumbnail')->nullable();
+            $table->boolean('is_publish');
             $table->timestamps();
             $table->softDeletes();
         });

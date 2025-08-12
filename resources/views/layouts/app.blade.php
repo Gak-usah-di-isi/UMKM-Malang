@@ -73,6 +73,7 @@
             }
         }
     </style>
+    @stack('styles')
     @include('layouts.partials.link')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -91,6 +92,7 @@
         </div>
     </div>
     @include('layouts.partials.script')
+    @stack('scripts')
 </body>
 
 </html>
