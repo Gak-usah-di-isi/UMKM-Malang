@@ -7,18 +7,18 @@ use App\Http\Controllers\RegisteredUmkmController;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
+use App\Http\Controllers\Event;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
 use App\Http\Controllers\Umkm\UmkmGalleryController;
 use App\Http\Controllers\Umkm\UmkmSocialController;
+use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
     return view('landingPage.index');
 })->name('home');
 
-Route::get('/about', function () {
-    return view('landingPage.about');
-});
+Route::get('/agenda', [EventController::class, 'index'])->name('events');
 
 Route::get('/products', function () {
     return view('landingPage.products');
