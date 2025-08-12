@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminArticleController;
+use App\Http\Controllers\Admin\AdminCommentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailProduct;
@@ -79,8 +81,28 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/umkm-verification/{slug}', [UmkmVerificationController::class, 'show'])->name('admin.umkm-verification.show');
     Route::patch('/umkm-verification/{slug}/verified', [UmkmVerificationController::class, 'verified'])->name('admin.umkm-verification.verified');
     Route::patch('/umkm-verification/{slug}/rejected', [UmkmVerificationController::class, 'rejected'])->name('admin.umkm-verification.rejected');
-});
 
+    // Article Management Routes
+    Route::resource('articles', AdminArticleController::class)->names([
+        'index' => 'admin.articles.index',
+        'create' => 'admin.articles.create',
+        'store' => 'admin.articles.store',
+        'show' => 'admin.articles.show',
+        'edit' => 'admin.articles.edit',
+        'update' => 'admin.articles.update',
+        'destroy' => 'admin.articles.destroy',
+    ]);
+
+    // Additional article routes
+    Route::patch('articles/{id}/restore', [AdminArticleController::class, 'restore'])->name('admin.articles.restore');
+    Route::delete('articles/{id}/force-delete', [AdminArticleController::class, 'forceDelete'])->name('admin.articles.force-delete');
+
+    // Comment management routes
+    Route::get('comments', [AdminCommentController::class, 'index'])->name('admin.comments.index');
+    Route::delete('comments/{comment}', [AdminCommentController::class, 'destroy'])->name('admin.comments.destroy');
+    Route::patch('comments/{id}/restore', [AdminCommentController::class, 'restore'])->name('admin.comments.restore');
+    Route::delete('comments/{id}/force-delete', [AdminCommentController::class, 'forceDelete'])->name('admin.comments.force-delete');
+});
 
 Route::prefix('umkm')->middleware(['auth', 'role:umkm'])->group(function () {
     Route::get('/dashboard', [UmkmDashboardController::class, 'index'])->name('umkm.dashboard');
