@@ -11,6 +11,7 @@ use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
 use App\Http\Controllers\Umkm\UmkmGalleryController;
 use App\Http\Controllers\Umkm\UmkmSocialController;
+use App\Http\Controllers\Umkm\UmkmProductController;
 
 Route::get('/', function () {
     return view('landingPage.index');
@@ -96,6 +97,14 @@ Route::prefix('umkm')->middleware(['auth', 'role:umkm'])->group(function () {
     Route::post('/socials', [UmkmSocialController::class, 'store'])->name('umkm.socials.store');
     Route::put('/socials/{social}', [UmkmSocialController::class, 'update'])->name('umkm.socials.update');
     Route::delete('/socials/{social}', [UmkmSocialController::class, 'destroy'])->name('umkm.socials.destroy');
+
+    Route::get('/products', [UmkmProductController::class, 'index'])->name('umkm.products.index');
+    Route::get('/products/create', [UmkmProductController::class, 'create'])->name('umkm.products.create');
+    Route::post('/products', [UmkmProductController::class, 'store'])->name('umkm.products.store');
+    Route::get('/products/{slug}', [UmkmProductController::class, 'show'])->name('umkm.products.show');
+    Route::get('/products/{slug}/edit', [UmkmProductController::class, 'edit'])->name('umkm.products.edit');
+    Route::put('/products/{slug}', [UmkmProductController::class, 'update'])->name('umkm.products.update');
+    Route::delete('/products/{slug}', [UmkmProductController::class, 'destroy'])->name('umkm.products.destroy');
 });
 
 Route::get('/user/umkm-saya', function () {
