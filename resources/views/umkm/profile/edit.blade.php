@@ -70,7 +70,7 @@
                                 <label class="block text-sm font-medium text-gray-700">Tagline</label>
                                 <textarea name="tagline" rows="4"
                                     class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 @error('tagline') border-red-500 @enderror"
-                                    placeholder=" Kalimat singkat yang menggambarkan UMKM ini...">{{ old('tagline', $umkm->tagline) }}</textarea>
+                                    placeholder=" Kalimat singkat yang menggambarkan UMKM ini..."> {{ old('tagline', $umkm->tagline) }}</textarea>
                                 @error('tagline')
                                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -80,7 +80,7 @@
                                 <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
                                 <textarea name="description" rows="8"
                                     class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 @error('description') border-red-500 @enderror"
-                                    placeholder=" Ceritakan secara lengkap tentang UMKM ini">{{ old('description', $umkm->description) }}</textarea>
+                                    placeholder=" Ceritakan secara lengkap tentang UMKM ini"> {{ old('description', $umkm->description) }}</textarea>
                                 @error('description')
                                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -109,7 +109,7 @@
                                 <label class="block text-sm font-medium text-gray-700">Google Maps Embed</label>
                                 <textarea name="google_maps" rows="3"
                                     class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 @error('google_maps') border-red-500 @enderror"
-                                    placeholder=" Tempel kode embed Google Maps">{{ old('google_maps', $umkm->google_maps) }}</textarea>
+                                    placeholder=" Tempel kode embed Google Maps"> {{ old('google_maps', $umkm->google_maps) }}</textarea>
                                 @error('google_maps')
                                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                                 @enderror
