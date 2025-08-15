@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisteredUmkmController;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
+use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\Event;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
@@ -82,6 +83,14 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/umkm-verification/{slug}', [UmkmVerificationController::class, 'show'])->name('admin.umkm-verification.show');
     Route::patch('/umkm-verification/{slug}/verified', [UmkmVerificationController::class, 'verified'])->name('admin.umkm-verification.verified');
     Route::patch('/umkm-verification/{slug}/rejected', [UmkmVerificationController::class, 'rejected'])->name('admin.umkm-verification.rejected');
+
+    Route::get('/articles', [AdminArticleController::class, 'index'])->name('admin.articles.index');
+    Route::get('/articles/create', [AdminArticleController::class, 'create'])->name('admin.articles.create');
+    Route::post('/articles', [AdminArticleController::class, 'store'])->name('admin.articles.store');
+    Route::get('/articles/{slug}', [AdminArticleController::class, 'show'])->name('admin.articles.show');
+    Route::get('/articles/{slug}/edit', [AdminArticleController::class, 'edit'])->name('admin.articles.edit');
+    Route::put('/articles/{slug}', [AdminArticleController::class, 'update'])->name('admin.articles.update');
+    Route::delete('/articles/{slug}', [AdminArticleController::class, 'destroy'])->name('admin.articles.destroy');
 });
 
 
