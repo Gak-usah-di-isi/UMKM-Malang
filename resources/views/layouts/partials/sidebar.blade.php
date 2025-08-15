@@ -31,8 +31,7 @@
                     <ul class="flex flex-col gap-2 mb-8">
                         <li>
                             <a href="{{ route('admin.dashboard') }}"
-                                class="{{ request()->routeIs('admin.dashboard') ? 'menu-item-active' : 'text-gray-600' }} flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:text-blue-600 menu-hover"
-                                data-menu="Dashboard">
+                                class="{{ request()->routeIs('admin.dashboard') ? 'menu-item-active' : 'text-gray-600' }} flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:text-blue-600 menu-hover">
                                 <div class="p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -94,9 +93,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#"
-                                class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-gray-600 hover:text-blue-600 menu-hover"
-                                data-menu="Calendar">
+                            <a href="{{ route('admin.articles.index') }}"
+                                class="{{ request()->routeIs('admin.articles.*') ? 'menu-item-active' : 'text-gray-600' }} flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:text-blue-600 menu-hover">
                                 <div class="p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-6">
