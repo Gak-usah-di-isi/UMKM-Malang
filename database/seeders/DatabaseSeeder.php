@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             LaratrustSeeder::class,
             UmkmCategorySeeder::class,
             EventSeeder::class,
+            ArticleCategorySeeder::class,
         ]);
     }
 }
