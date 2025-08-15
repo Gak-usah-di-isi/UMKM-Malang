@@ -14,7 +14,7 @@
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="/" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Beranda</a>
-                <a href="/about" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Tentang</a>
+                <a href="/agenda" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Agenda</a>
                 <a href="/products" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Produk</a>
                 <a href="/categories" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Kategori</a>
                 <a href="/umkm-list" class="nav-link text-gray-700 hover:text-green-600 transition-colors">UMKM</a>
@@ -111,7 +111,7 @@
             </button>
             <div class="mt-16 space-y-6 ">
                 <a href="/" class="block text-xl text-gray-700 hover:text-green-600">Beranda</a>
-                <a href="/about" class="block text-xl text-gray-700 hover:text-green-600">Tentang</a>
+                <a href="/Agenda" class="block text-xl text-gray-700 hover:text-green-600">Agenda</a>
                 <a href="/products" class="block text-xl text-gray-700 hover:text-green-600">Produk</a>
                 <a href="/categories" class="block text-xl text-gray-700 hover:text-green-600">Kategori</a>
                 <a href="/umkm-list" class="block text-xl text-gray-700 hover:text-green-600">UMKM</a>
