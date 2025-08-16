@@ -85,8 +85,8 @@
                                             Pengajuan UMKM
                                         </a>
 
-                                        <a href="#"
-                                            class="block px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-all duration-200">Kategori
+                                        <a href="{{ route('admin.umkm-categories.index') }}"
+                                            class="{{ request()->routeIs('admin.umkm-categories.index') ? 'menu-item-active text-white' : 'text-gray-600' }} block px-3 py-2 rounded-lg hover:bg-gray-100 transition-all duration-200">Kategori
                                             UMKM</a>
                                     </li>
                                 </ul>
@@ -106,9 +106,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-gray-600 hover:text-blue-600 menu-hover"
-                                data-menu="Calendar">
+                            <a href="{{ route('admin.events.index') }}"
+                                class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-gray-600 hover:text-blue-600 menu-hover">
                                 <div class="p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="size-6">

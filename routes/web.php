@@ -8,6 +8,8 @@ use App\Http\Controllers\RegisteredUmkmController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UmkmVerificationController;
 use App\Http\Controllers\Admin\AdminArticleController;
+use App\Http\Controllers\Admin\AdminEventController;
+use App\Http\Controllers\Admin\AdminUmkmCategoryController;
 use App\Http\Controllers\Event;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
@@ -91,6 +93,21 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/articles/{slug}/edit', [AdminArticleController::class, 'edit'])->name('admin.articles.edit');
     Route::put('/articles/{slug}', [AdminArticleController::class, 'update'])->name('admin.articles.update');
     Route::delete('/articles/{slug}', [AdminArticleController::class, 'destroy'])->name('admin.articles.destroy');
+
+    Route::get('/umkm-categories', [AdminUmkmCategoryController::class, 'index'])->name('admin.umkm-categories.index');
+    Route::get('/umkm-categories/create', [AdminUmkmCategoryController::class, 'create'])->name('admin.umkm-categories.create');
+    Route::post('/umkm-categories', [AdminUmkmCategoryController::class, 'store'])->name('admin.umkm-categories.store');
+    Route::get('/umkm-categories/{slug}/edit', [AdminUmkmCategoryController::class, 'edit'])->name('admin.umkm-categories.edit');
+    Route::put('/umkm-categories/{slug}', [AdminUmkmCategoryController::class, 'update'])->name('admin.umkm-categories.update');
+    Route::delete('/umkm-categories/{slug}', [AdminUmkmCategoryController::class, 'destroy'])->name('admin.umkm-categories.destroy');
+
+    Route::get('/events', [AdminEventController::class, 'index'])->name('admin.events.index');
+    Route::get('/events/create', [AdminEventController::class, 'create'])->name('admin.events.create');
+    Route::post('/events', [AdminEventController::class, 'store'])->name('admin.events.store');
+    Route::get('/events/{slug}', [AdminEventController::class, 'show'])->name('admin.events.show');
+    Route::get('/events/{slug}/edit', [AdminEventController::class, 'edit'])->name('admin.events.edit');
+    Route::put('/events/{slug}', [AdminEventController::class, 'update'])->name('admin.events.update');
+    Route::delete('/events/{slug}', [AdminEventController::class, 'destroy'])->name('admin.events.destroy');
 });
 
 
