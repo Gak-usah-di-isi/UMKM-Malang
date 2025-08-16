@@ -104,8 +104,14 @@
                                 <p class="text-gray-900">{{ $article->created_at->format('d M Y, H:i') }}</p>
                             </div>
                             <div>
-                                <h4 class="text-sm font-medium text-gray-500 mb-1">Terakhir Diperbarui</h4>
-                                <p class="text-gray-900">{{ $article->updated_at->format('d M Y, H:i') }}</p>
+                                <h4 class="text-sm font-medium text-gray-500 mb-1">Total Likes</h4>
+                                <p class="text-gray-900 flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                    </svg>
+                                    {{ $likesCount }} likes
+                                </p>
                             </div>
                             <div>
                                 <h4 class="text-sm font-medium text-gray-500 mb-1">Jumlah Karakter</h4>
@@ -116,6 +122,60 @@
                                 <p class="text-gray-900">{{ ceil(str_word_count($article->content) / 200) }} menit</p>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                </path>
+                            </svg>
+                            Komentar ({{ $comments->count() }})
+                        </h3>
+
+                        @if ($comments->count() > 0)
+                            <div class="space-y-4">
+                                @foreach ($comments as $comment)
+                                    <div class="bg-white rounded-lg p-4 border border-gray-200">
+                                        <div class="flex items-start gap-3">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                                    <span class="text-white text-sm font-medium">
+                                                        {{ substr($comment->user->name ?? 'U', 0, 1) }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <div class="flex items-center gap-2 mb-1">
+                                                    <h4 class="text-sm font-medium text-gray-900">
+                                                        {{ $comment->user->name ?? 'Unknown User' }}
+                                                    </h4>
+                                                    <span class="text-xs text-gray-500">
+                                                        {{ $comment->created_at->format('d M Y, H:i') }}
+                                                    </span>
+                                                </div>
+                                                <p class="text-sm text-gray-700 leading-relaxed">
+                                                    {{ $comment->content }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                            <div class="text-center py-8">
+                                <svg class="w-12 h-12 text-gray-400 mx-auto mb-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                    </path>
+                                </svg>
+                                <p class="text-gray-500">Belum ada komentar untuk artikel ini.</p>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t justify-end">
