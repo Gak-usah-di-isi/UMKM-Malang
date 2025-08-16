@@ -25,6 +25,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/agenda', [EventController::class, 'index'])->name('events');
+Route::get('/agenda/{event:slug}', [EventController::class, 'show'])->name('events.show');
 
 Route::get('/products', function () {
     return view('landingPage.products');
