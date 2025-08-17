@@ -11,73 +11,75 @@ class EventController extends Controller
 {
     public function index(Request $request): View
     {
-        $query = Event::query();
+        $query = Event::query()->where('status', 'published');
 
-        $query->where('status', 'published');
-
+        // Search filter
         if ($request->filled('search')) {
             $searchTerm = $request->search;
             $query->where(function ($q) use ($searchTerm) {
                 $q->where('title', 'LIKE', "%{$searchTerm}%")
-                    ->orWhere('content', 'LIKE', "%{$searchTerm}%")
-                    ->orWhere('location', 'LIKE', "%{$searchTerm}%")
-                    ->orWhere('organizer', 'LIKE', "%{$searchTerm}%");
+                  ->orWhere('content', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('location', 'LIKE', "%{$searchTerm}%")
+                  ->orWhere('organizer', 'LIKE', "%{$searchTerm}%");
             });
         }
 
+        // Date filter
         if ($request->filled('date_from')) {
             $query->where('start_time', '>=', Carbon::parse($request->date_from)->startOfDay());
         }
 
-        if ($request->filled('date_to')) {
-            $query->where('end_time', '<=', Carbon::parse($request->date_to)->endOfDay());
-        }
-
+        // Location filter
         if ($request->filled('location')) {
-            $query->where('location', 'LIKE', "%{$request->location}%");
+            $query->where('location', $request->location);
         }
 
+        // Order by start time
         $query->orderBy('start_time', 'asc');
 
+        // Get paginated results
         $events = $query->paginate(9)->withQueryString();
 
+        // Get upcoming events
         $upcomingEvents = Event::where('status', 'published')
             ->where('start_time', '>', Carbon::now())
             ->orderBy('start_time', 'asc')
-            ->take(6)
+            ->take(3)
             ->get();
 
+        // Statistics
         $statistics = [
             'total' => Event::where('status', 'published')->count(),
-            'upcoming' => Event::where('status', 'published')
-                ->where('start_time', '>', Carbon::now())
-                ->count(),
-            'ongoing' => Event::where('status', 'published')
-                ->where('start_time', '<=', Carbon::now())
-                ->where('end_time', '>=', Carbon::now())
-                ->count(),
-            'past' => Event::where('status', 'published')
-                ->where('end_time', '<', Carbon::now())
-                ->count(),
+            'published' => Event::where('status', 'published')->count(),
+            'draft' => Event::where('status', 'draft')->count(),
+            'upcoming' => Event::where('start_time', '>', Carbon::now())->count(),
         ];
 
-        $locations = Event::where('status', 'published')
-            ->select('location')
+        // Unique locations
+        $locations = Event::select('location')
             ->distinct()
-            ->pluck('location')
-            ->map(function ($location) {
-                return explode(',', $location)[0];
+            ->pluck('location');
+
+        return view('landingPage.events', compact(
+            'events',
+            'upcomingEvents',
+            'statistics',
+            'locations'
+        ));
+    }
+
+    public function show(Event $event): View
+    {
+        $relatedEvents = Event::where('status', 'published')
+            ->where('id', '!=', $event->id)
+            ->where(function($query) use ($event) {
+                $query->where('location', $event->location)
+                      ->orWhere('organizer', $event->organizer);
             })
-            ->unique()
-            ->sort()
-            ->values();
+            ->orderBy('start_time', 'asc')
+            ->take(3)
+            ->get();
 
-        $organizers = Event::where('status', 'published')
-            ->select('organizer')
-            ->distinct()
-            ->orderBy('organizer')
-            ->pluck('organizer');
-
-        return view('landingPage.events', compact('events', 'upcomingEvents', 'statistics', 'locations', 'organizers'));
+        return view('landingPage.detail-event', compact('event', 'relatedEvents'));
     }
 }

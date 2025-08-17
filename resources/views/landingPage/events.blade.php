@@ -204,7 +204,7 @@
                             <span class="text-sm text-gray-500">Penyelenggara:</span>
                             <div class="font-medium text-gray-700">{{ $event->organizer }}</div>
                         </div>
-                        <a href="" class="text-emerald-600 font-medium hover:text-emerald-700 transition-colors">
+                        <a href="{{ route('events.show', $event) }}" class="text-emerald-600 font-medium hover:text-emerald-700 transition-colors">
                             Detail <i class="fas fa-arrow-right ml-1"></i>
                         </a>
                     </div>
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                     
-                    <a href="" class="inline-block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="{{ route('events.show', $event) }}" class="inline-block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
                         Lihat Detail
                     </a>
                 </div>
