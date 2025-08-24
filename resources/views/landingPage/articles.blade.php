@@ -154,455 +154,166 @@
     </style>
 @endsection
 @section('content')
-    <!-- Background with animated green gradients -->
     <div class="min-h-screen py-8 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 relative overflow-hidden">
+        <div class="container mx-auto  relative z-10">
 
-        <!-- Breadcrumb -->
-        <nav class="flex ml-8 lg:ml-14 text-sm text-gray-600" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li><a href="/" class="hover:text-emerald-600">Beranda</a></li>
-                <li><i class="fas fa-chevron-right text-xs mx-2 text-gray-400"></i></li>
-                <li><a href="/news" class="hover:text-emerald-600 font-medium text-emerald-700">Artikel & Berita</a></li>
-            </ol>
-        </nav>
+            <nav class="flex ml-4 lg:ml-8 text-sm text-gray-600" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li><a href="/" class="hover:text-emerald-600">Beranda</a></li>
+                    <li><i class="fas fa-chevron-right text-xs mx-2 text-gray-400"></i></li>
+                    <li><a href="{{ route('articles.index') }}" class="hover:text-emerald-600">Artikel & Berita</a></li>
 
-        <!-- Animated green background elements -->
-        <div class="absolute inset-0 opacity-30">
-            <div
-                class="absolute top-20 left-10 w-32 h-32 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl animate-blob">
-            </div>
-            <div
-                class="absolute top-40 right-10 w-32 h-32 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
-            </div>
-            <div
-                class="absolute -bottom-8 left-20 w-32 h-32 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
-            </div>
-        </div>
+                </ol>
+            </nav>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col lg:flex-row relative gap-8 pt-6">
-                <!-- Sidebar categories with glassmorphism -->
-                <aside class="lg:w-3/12 h-fit sticky top-6">
-                    <div class="scrollable-sidebar space-y-6 lg:pr-2">
-                        <!-- Categories Filter -->
-                        <div class="glass rounded-3xl p-6 transition-all duration-500 transform">
-                            <div class="flex items-center gap-3 mb-6">
-                                <h2 class="font-bold text-xl green-gradient-text">Kategori Artikel</h2>
+            <div class="absolute inset-0 opacity-30">
+                <div
+                    class="absolute top-20 left-10 w-32 h-32 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl animate-blob">
+                </div>
+                <div
+                    class="absolute top-40 right-10 w-32 h-32 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-8 left-20 w-32 h-32 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row relative gap-8 pt-6">
+                    <aside class="lg:w-3/12 h-fit sticky top-6">
+                        <div class="scrollable-sidebar space-y-6 lg:pr-2">
+                            <!-- Categories Filter -->
+                            <div class="glass rounded-3xl p-6 transition-all duration-500 transform">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <h2 class="font-bold text-xl green-gradient-text">Kategori Artikel</h2>
+                                </div>
+                                <ul class="space-y-2">
+                                    @foreach ($categories as $category)
+                                        <li class="group">
+                                            <div
+                                                class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
+                                                <a href="{{ route('articles.index', ['category' => $category->slug]) }}"
+                                                    class="flex items-center space-x-3">
+                                                    <span class="font-medium text-sm">{{ $category->name }}</span>
+                                                </a>
+                                                <span
+                                                    class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">{{ $category->articles->count() }}</span>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            <ul class="space-y-2">
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Tips Bisnis</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">24</span>
-                                    </div>
-                                </li>
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Marketing Digital</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">18</span>
-                                    </div>
-                                </li>
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Success Stories</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">12</span>
-                                    </div>
-                                </li>
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Keuangan</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">15</span>
-                                    </div>
-                                </li>
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Bisnis Berkelanjutan</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">9</span>
-                                    </div>
-                                </li>
-                                <li class="group">
-                                    <div
-                                        class="flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all hover:text-emerald-600 duration-300 hover:bg-gradient-to-r hover:from-emerald-100 hover:to-teal-100 hover:border-emerald-200 border border-transparent">
-                                        <div class="flex items-center space-x-3">
-
-                                            <span class="font-medium text-sm">Event & Workshop</span>
-                                        </div>
-                                        <span
-                                            class="text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full">7</span>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
-                </aside>
+                    </aside>
 
-                <!-- Main content -->
-                <main class="flex-1 w-full md:w-9/12">
-                    <div class="scrollable-main">
-                        <!-- Hero Banner -->
-                        <div
-                            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500 via-green-600 to-teal-700 mb-8 transform transition-all duration-500">
-                            <div class="absolute inset-0 bg-black/10"></div>
-                            <div class="relative p-8">
-                                <div class="flex items-center justify-between">
-                                    <div class="space-y-4">
-                                        <div
-                                            class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2">
-                                            <span class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></span>
-                                            <span class="text-white font-medium">Artikel Terbaru</span>
+                    <main class="flex-1 w-full md:w-9/12">
+                        <div class="scrollable-main">
+                            <div
+                                class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500 via-green-600 to-teal-700 mb-8 transform transition-all duration-500">
+                                <div class="absolute inset-0 bg-black/10"></div>
+                                <div class="relative p-8">
+                                    <div class="flex items-center justify-between">
+                                        <div class="space-y-4">
+                                            <div
+                                                class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2">
+                                                <span class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></span>
+                                                <span class="text-white font-medium">Artikel Terbaru</span>
+                                            </div>
+                                            <h1 class="text-4xl font-black text-white drop-shadow-lg">
+                                                Wawasan Terkini untuk
+                                                <span
+                                                    class="block bg-gradient-to-r from-yellow-300 to-amber-300 bg-clip-text text-transparent">
+                                                    Pengusaha UMKM
+                                                </span>
+                                            </h1>
+                                            <p class="text-emerald-100 text-lg max-w-md">Temukan tips, trik, dan inspirasi
+                                                terbaru untuk mengembangkan bisnis UMKM Anda</p>
                                         </div>
-                                        <h1 class="text-4xl font-black text-white drop-shadow-lg">
-                                            Wawasan Terkini untuk
-                                            <span
-                                                class="block bg-gradient-to-r from-yellow-300 to-amber-300 bg-clip-text text-transparent">
-                                                Pengusaha UMKM
-                                            </span>
-                                        </h1>
-                                        <p class="text-emerald-100 text-lg max-w-md">Temukan tips, trik, dan inspirasi
-                                            terbaru untuk mengembangkan bisnis UMKM Anda</p>
                                     </div>
                                 </div>
+                                <div class="absolute bottom-0 left-0 right-0">
+                                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+                                        class="relative block w-full h-16">
+                                        <path
+                                            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                                            fill="white" fill-opacity="0.1"></path>
+                                    </svg>
+                                </div>
                             </div>
-                            <!-- Decorative waves -->
-                            <div class="absolute bottom-0 left-0 right-0">
-                                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-16">
-                                    <path
-                                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                                        fill="white" fill-opacity="0.1"></path>
-                                </svg>
-                            </div>
-                        </div>
 
-                        <!-- Content Card with glassmorphism -->
-                        <div class="glass rounded-3xl p-8">
+                            <div class="glass rounded-3xl p-8">
 
-                            <!-- Articles Grid -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <!-- Article 1 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    @foreach ($articles as $article)
                                         <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">Keuangan</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <div class="flex items-center gap-2 mb-3">
-
-                                        </div>
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors duration-300 line-clamp-2">
-                                            Cara Mengelola Cashflow UMKM yang Efektif
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Pengelolaan arus kas yang baik adalah kunci kesuksesan bisnis UMKM. Pelajari
-                                            tips praktis untuk mengatur keuangan bisnis Anda...
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
+                                            class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
+                                            <div class="relative overflow-hidden">
+                                                <img src="{{ asset($article->thumbnail) }}" alt="Article Image"
+                                                    class="article-image w-full h-48 object-cover transition-transform duration-500">
                                                 <div
-                                                    class="w-8 h-8 green-gradient-bg rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">SR</span>
+                                                    class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
                                                 </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Sari Rahmawati</p>
-                                                    <p class="text-gray-500 text-xs">22 Jan 2024</p>
+
+                                                <div class="absolute top-4 left-4">
+                                                    <span
+                                                        class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">{{ $article->category->name }}</span>
                                                 </div>
                                             </div>
 
+                                            <div class="p-6">
+                                                <div class="flex items-center gap-2 mb-3">
+
+                                                </div>
+
+                                                <h3
+                                                    class="font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors duration-300 line-clamp-2">
+                                                    <a
+                                                        href="{{ route('articles.show', ['slug' => $article->slug]) }}">{{ $article->title }}</a>
+                                                </h3>
+
+                                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                                    {{ \Str::limit($article->content, 150) }}
+                                                </p>
+
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center gap-2">
+                                                        <div
+                                                            class="w-8 h-8 green-gradient-bg rounded-full flex items-center justify-center">
+                                                            <span
+                                                                class="text-white font-bold text-xs">{{ strtoupper(substr($article->user->name, 0, 2)) }}</span>
+                                                        </div>
+                                                        <div>
+                                                            <p class="font-medium text-gray-800 text-sm">
+                                                                {{ $article->user->name }}</p>
+                                                            <p class="text-gray-500 text-xs">
+                                                                {{ $article->created_at->format('d M Y') }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                 </div>
 
-                                <!-- Article 2 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
-                                        <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">Success
-                                                Story</span>
-                                        </div>
-                                        <div class="absolute bottom-4 left-4">
-                                            <span
-                                                class="eco-badge text-emerald-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
-                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd"
-                                                        d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                                                        clip-rule="evenodd"></path>
+                                <div class="flex justify-center mt-12" id="load-more-container">
+                                    @if ($articles->hasMorePages())
+                                        <button id="load-more-btn"
+                                            class="group green-gradient-bg text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                            <span class="flex items-center gap-2">
+                                                <span>Muat Artikel Lainnya</span>
+                                                <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M19 9l-7 7-7-7"></path>
                                                 </svg>
-                                                Ramah Lingkungan
                                             </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <div class="flex items-center gap-2 mb-3">
-
-
-                                        </div>
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-teal-600 transition-colors duration-300 line-clamp-2">
-                                            Dari Warung Kecil Menjadi Brand Ternama
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Kisah inspiratif UMKM Malang yang berhasil berkembang pesat dalam 3 tahun. Simak
-                                            strategi dan perjuangan mereka...
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
-                                                <div
-                                                    class="w-8 h-8 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">DP</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Dewi Purnama</p>
-                                                    <p class="text-gray-500 text-xs">20 Jan 2024</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                        </button>
+                                    @endif
                                 </div>
-
-                                <!-- Article 3 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
-                                        <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Berkelanjutan</span>
-                                        </div>
-                                        <div class="absolute bottom-4 left-4">
-                                            <span
-                                                class="eco-badge text-emerald-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
-                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd"
-                                                        d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                                Ramah Lingkungan
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <div class="flex items-center gap-2 mb-3">
-
-
-                                        </div>
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300 line-clamp-2">
-                                            Membangun Bisnis Ramah Lingkungan
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Tren bisnis berkelanjutan semakin berkembang. Pelajari cara memulai bisnis yang
-                                            peduli lingkungan dan tetap profitable...
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
-                                                <div
-                                                    class="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">RK</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Rudi Kurniawan</p>
-                                                    <p class="text-gray-500 text-xs">18 Jan 2024</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Article 4 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
-                                        <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-lime-500 text-white text-xs font-bold px-3 py-1 rounded-full">Tips</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <div class="flex items-center gap-2 mb-3">
-
-
-                                        </div>
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-lime-600 transition-colors duration-300 line-clamp-2">
-                                            5 Tools Gratis untuk Meningkatkan Produktivitas
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Maksimalkan efisiensi bisnis Anda dengan tools gratis yang powerful. Dari
-                                            manajemen proyek hingga analisis data...
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
-                                                <div
-                                                    class="w-8 h-8 bg-gradient-to-r from-lime-400 to-green-500 rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">LM</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Lisa Maharani</p>
-                                                    <p class="text-gray-500 text-xs">15 Jan 2024</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Article 5 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
-                                        <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">Workshop</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <div class="flex items-center gap-2 mb-3">
-
-                                        </div>
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300 line-clamp-2">
-                                            Workshop Digital Marketing Gratis Februari 2024
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Bergabunglah dalam workshop gratis untuk mempelajari strategi pemasaran digital
-                                            terkini. Daftar sekarang, kuota terbatas!
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
-                                                <div
-                                                    class="w-8 h-8 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">AD</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Admin</p>
-                                                    <p class="text-gray-500 text-xs">12 Jan 2024</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Article 6 -->
-                                <div
-                                    class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
-                                    <div class="relative overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                                            alt="Article Image"
-                                            class="article-image w-full h-48 object-cover transition-transform duration-500">
-                                        <div
-                                            class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
-                                        </div>
-                                        <div class="absolute top-4 left-4">
-                                            <span
-                                                class="bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">Teknologi</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-
-                                        <h3
-                                            class="font-bold text-gray-800 mb-3 group-hover:text-teal-600 transition-colors duration-300 line-clamp-2">
-                                            AI untuk UMKM: Peluang atau Ancaman?
-                                        </h3>
-                                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                            Teknologi AI semakin mudah diakses. Bagaimana UMKM bisa memanfaatkan AI untuk
-                                            meningkatkan efisiensi dan kompetitivitas...
-                                        </p>
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-2">
-                                                <div
-                                                    class="w-8 h-8 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full flex items-center justify-center">
-                                                    <span class="text-white font-bold text-xs">BP</span>
-                                                </div>
-                                                <div>
-                                                    <p class="font-medium text-gray-800 text-sm">Budi Pratama</p>
-                                                    <p class="text-gray-500 text-xs">10 Jan 2024</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Load More Button -->
-                            <div class="flex justify-center mt-12">
-                                <button
-                                    class="group green-gradient-bg text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                    <span class="flex items-center gap-2">
-                                        <span>Muat Artikel Lainnya</span>
-                                        <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                    </span>
-                                </button>
                             </div>
                         </div>
-                    </div>
-                </main>
+                    </main>
+                </div>
             </div>
         </div>
     </div>
