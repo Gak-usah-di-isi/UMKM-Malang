@@ -14,11 +14,14 @@
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="/" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Beranda</a>
-                <a href="/agenda" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Agenda</a>
-                <a href="/products" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Produk</a>
-                <a href="/categories" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Kategori</a>
-                <a href="/umkm-list" class="nav-link text-gray-700 hover:text-green-600 transition-colors">UMKM</a>
-                <a href="/articles" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Berita</a>
+                <a href="{{ route('events') }}"
+                    class="nav-link text-gray-700 hover:text-green-600 transition-colors">Agenda</a>
+                <a href="{{ route('products.index') }}"
+                    class="nav-link text-gray-700 hover:text-green-600 transition-colors">Produk</a>
+                <a href="{{ route('umkm.index') }}"
+                    class="nav-link text-gray-700 hover:text-green-600 transition-colors">UMKM</a>
+                <a href="{{ route('articles.index') }}"
+                    class="nav-link text-gray-700 hover:text-green-600 transition-colors">Berita</a>
                 <a href="/contact" class="nav-link text-gray-700 hover:text-green-600 transition-colors">Kontak</a>
                 <!-- Cek jika sudah login -->
                 @auth
@@ -69,7 +72,8 @@
                             </div>
 
                             <div class="border-t border-gray-100 py-1">
-                                <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
+                                <form method="POST" action="{{ route('logout') }}" id="logout-form"
+                                    style="display: none;">
                                     @csrf
                                 </form>
                                 <a href="#"

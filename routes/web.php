@@ -17,6 +17,9 @@ use App\Http\Controllers\Umkm\UmkmGalleryController;
 use App\Http\Controllers\Umkm\UmkmSocialController;
 use App\Http\Controllers\Umkm\UmkmProductController;
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\EventController;
 
 
@@ -27,40 +30,17 @@ Route::get('/', function () {
 Route::get('/agenda', [EventController::class, 'index'])->name('events');
 Route::get('/agenda/{event:slug}', [EventController::class, 'show'])->name('events.show');
 
-Route::get('/products', function () {
-    return view('landingPage.products');
-});
+Route::get('products', [ProductController::class, 'index'])->name('products.index');
+Route::get('products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
-Route::get('/categories', function () {
-    return view('landingPage.categories');
-});
+Route::get('umkm', [UmkmController::class, 'index'])->name('umkm.index');
+// Route::get('umkm/{slug}', [UmkmController::class, 'show'])->name('umkm.show');
 
-Route::get('/umkm-list', function () {
-    return view('landingPage.umkm-list');
-});
-
-Route::get('/articles', function () {
-    return view('landingPage.articles');
-});
-
-Route::get('/detail-article', function () {
-    return view('landingPage.detail-article');
-});
-
-Route::get('/umkm-list', function () {
-    return view('landingPage.umkm-list');
-});
-
-Route::get('/detail-umkm', function () {
-    return view('landingPage.detail-umkm');
-});
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
 
 Route::get('/contact', function () {
     return view('landingPage.contact');
-});
-
-Route::get('/product-detail', function () {
-    return view('landingPage.productDetail');
 });
 
 Route::get('/daftar-umkm', function () {
