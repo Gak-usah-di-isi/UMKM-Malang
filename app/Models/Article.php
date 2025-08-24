@@ -67,16 +67,6 @@ class Article extends Model
         return $this->belongsTo(ArticleCategory::class, 'article_category_id');
     }
 
-    public function comments()
-    {
-        return $this->hasMany(ArticleComment::class);
-    }
-
-    public function likes()
-    {
-        return $this->hasMany(ArticleLike::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
