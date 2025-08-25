@@ -18,7 +18,7 @@
                     class="nav-link text-gray-700 hover:text-green-600 transition-colors">Agenda</a>
                 <a href="{{ route('products.index') }}"
                     class="nav-link text-gray-700 hover:text-green-600 transition-colors">Produk</a>
-                <a href="{{ route('umkm.index') }}"
+                <a href="{{ route('list-umkm.index') }}"
                     class="nav-link text-gray-700 hover:text-green-600 transition-colors">UMKM</a>
                 <a href="{{ route('articles.index') }}"
                     class="nav-link text-gray-700 hover:text-green-600 transition-colors">Berita</a>

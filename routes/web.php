@@ -33,8 +33,8 @@ Route::get('/agenda/{event:slug}', [EventController::class, 'show'])->name('even
 Route::get('products', [ProductController::class, 'index'])->name('products.index');
 Route::get('products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
-Route::get('umkm', [UmkmController::class, 'index'])->name('umkm.index');
-// Route::get('umkm/{slug}', [UmkmController::class, 'show'])->name('umkm.show');
+Route::get('list-umkm', [UmkmController::class, 'index'])->name('list-umkm.index');
+Route::get('list-umkm/{slug}', [UmkmController::class, 'show'])->name('list-umkm.show');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
@@ -49,6 +49,10 @@ Route::get('/daftar-umkm', function () {
 
 Route::get('/verifikasi-umkm', function () {
     return view('umkmRegistration.verifikasi');
+});
+
+Route::get('/detail-umkm', function () {
+    return view('landingPage.detail-umkm');
 });
 
 

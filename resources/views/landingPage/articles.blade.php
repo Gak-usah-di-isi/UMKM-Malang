@@ -248,7 +248,7 @@
                                         <div
                                             class="article-card backdrop-blur-sm bg-white/60 border border-white/30 rounded-3xl overflow-hidden border-neutral-200 transition-all duration-500 transform hover:-translate-y-3 cursor-pointer group">
                                             <div class="relative overflow-hidden">
-                                                <img src="{{ asset($article->thumbnail) }}" alt="Article Image"
+                                                <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="Article Image"
                                                     class="article-image w-full h-48 object-cover transition-transform duration-500">
                                                 <div
                                                     class="article-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300">
