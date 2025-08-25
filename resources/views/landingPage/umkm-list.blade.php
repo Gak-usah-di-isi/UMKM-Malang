@@ -214,17 +214,6 @@
             <div class="flex flex-col lg:flex-row relative gap-8 pt-6">
                 <aside class="lg:w-3/12 h-fit sticky top-6">
                     <div class="scrollable-sidebar space-y-6 lg:pr-2">
-                        <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6">
-                            <div class="flex items-center gap-3 mb-6">
-                                <h2
-                                    class="font-bold text-xl bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                                    Cari UMKM</h2>
-                            </div>
-                            <div class="relative">
-                                <input type="text" placeholder="Cari nama UMKM..."
-                                    class="w-full bg-white/70 backdrop-blur-sm border-2 border-gray-200 rounded-xl text-sm px-4 py-3 pl-10">
-                            </div>
-                        </div>
 
                         <div class="backdrop-blur-lg bg-white/80 border border-white/20 rounded-3xl border-neutral-200 p-6">
                             <div class="flex items-center gap-3 mb-6">
