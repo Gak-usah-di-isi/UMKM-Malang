@@ -21,11 +21,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomeController;
 
-
-Route::get('/', function () {
-    return view('landingPage.index');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/agenda', [EventController::class, 'index'])->name('events');
 Route::get('/agenda/{event:slug}', [EventController::class, 'show'])->name('events.show');
@@ -50,9 +48,8 @@ Route::get('/daftar-umkm', function () {
 Route::get('/verifikasi-umkm', function () {
     return view('umkmRegistration.verifikasi');
 });
-
-Route::get('/detail-umkm', function () {
-    return view('landingPage.detail-umkm');
+Route::get('/detail-product', function () {
+    return view('landingPage.productDetail');
 });
 
 
