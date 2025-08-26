@@ -382,11 +382,11 @@
                     </div>
                 </div>
 
-                <button
+                <a href="{{ route('pengajuan-umkm.create') }}"
                     class="bg-white text-green-600 px-12 py-4 rounded-full font-bold text-xl hover:bg-green-50 transition-all transform hover:scale-105">
                     <i class="fas fa-rocket mr-3"></i>
                     Daftar Sekarang
-                </button>
+                </a>
             </div>
         </div>
     </section>
