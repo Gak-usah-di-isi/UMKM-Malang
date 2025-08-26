@@ -45,19 +45,6 @@
                         <li>
                             <a href="#"
                                 class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-gray-600 hover:text-blue-600 menu-hover"
-                                data-menu="Profile">
-                                <div class="p-1">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <circle cx="12" cy="8" r="4" stroke-width="2" />
-                                        <path d="M6 20c0-2.21 3.58-4 8-4s8 1.79 8 4" stroke-width="2" />
-                                    </svg>
-                                </div>
-                                <span class="menu-label font-medium">User</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-gray-600 hover:text-blue-600 menu-hover"
                                 data-menu="Forms">
                                 <div class="p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -133,8 +120,7 @@
                     <ul class="flex flex-col gap-2 mb-8">
                         <li>
                             <a href="{{ route('umkm.dashboard') }}"
-                                class="{{ request()->routeIs('admin.dashboard') ? 'menu-item-active' : 'text-gray-600' }} flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:text-blue-600 menu-hover"
-                                data-menu="Dashboard">
+                                class="{{ request()->routeIs('umkm.dashboard') ? 'menu-item-active' : 'text-gray-600' }} flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:text-blue-600 menu-hover">
                                 <div class="p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

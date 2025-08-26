@@ -91,6 +91,7 @@
         </div>
     </div>
     @include('layouts.partials.script')
+    @stack('scripts')
 </body>
 
 </html>
