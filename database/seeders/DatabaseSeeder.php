@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             UmkmCategorySeeder::class,
             EventSeeder::class,
             ArticleCategorySeeder::class,
+            ProductCategorySeeder::class
         ]);
     }
 }
