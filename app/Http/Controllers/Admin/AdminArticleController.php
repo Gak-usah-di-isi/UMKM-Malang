@@ -58,14 +58,13 @@ class AdminArticleController extends Controller
 
     public function show($slug)
     {
-        $article = Article::with(['category', 'user', 'likes', 'comments.user'])
+        $article = Article::with(['category', 'user', 'comments.user'])
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $likesCount = $article->likes()->count();
         $comments = $article->comments()->latest()->get();
 
-        return view('admin.article.show', compact('article', 'likesCount', 'comments'));
+        return view('admin.article.show', compact('article', 'comments'));
     }
 
     public function edit($slug)
