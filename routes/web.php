@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UmkmVerificationController;
 use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminUmkmCategoryController;
+use App\Http\Controllers\Admin\AdminUmkmController;
 use App\Http\Controllers\Event;
 use App\Http\Controllers\Umkm\DashboardController as UmkmDashboardController;
 use App\Http\Controllers\Umkm\UmkmProfileController;
@@ -67,6 +68,12 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/umkm-verification/{slug}', [UmkmVerificationController::class, 'show'])->name('admin.umkm-verification.show');
     Route::patch('/umkm-verification/{slug}/verified', [UmkmVerificationController::class, 'verified'])->name('admin.umkm-verification.verified');
     Route::patch('/umkm-verification/{slug}/rejected', [UmkmVerificationController::class, 'rejected'])->name('admin.umkm-verification.rejected');
+
+    Route::get('/umkm', [AdminUmkmController::class, 'index'])->name('admin.umkm.index');
+    Route::get('/umkm/{slug}', [AdminUmkmController::class, 'show'])->name('admin.umkm.show');
+    Route::get('/umkm/{slug}/edit', [AdminUmkmController::class, 'edit'])->name('admin.umkm.edit');
+    Route::put('/umkm/{slug}', [AdminUmkmController::class, 'update'])->name('admin.umkm.update');
+    Route::delete('/umkm/{slug}', [AdminUmkmController::class, 'destroy'])->name('admin.umkm.destroy');
 
     Route::get('/articles', [AdminArticleController::class, 'index'])->name('admin.articles.index');
     Route::get('/articles/create', [AdminArticleController::class, 'create'])->name('admin.articles.create');

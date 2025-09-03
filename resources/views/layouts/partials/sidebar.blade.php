@@ -64,9 +64,10 @@
                             <div class="pl-12 mt-2 menu-dropdown hidden">
                                 <ul class="flex flex-col gap-1">
                                     <li>
-                                        <a href="#"
-                                            class="block px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-all duration-200">Semua
-                                            UMKM</a>
+                                        <a href="{{ route('admin.umkm.index') }}"
+                                            class="{{ request()->routeIs('admin.umkm.index') ? 'menu-item-active text-white' : 'text-gray-600' }} block px-3 py-2 rounded-lg hover:bg-gray-100 transition-all duration-200">
+                                            Semua UMKM
+                                        </a>
                                         <a href="{{ route('admin.umkm-verification.index') }}"
                                             class="{{ request()->routeIs('admin.umkm-verification.index') ? 'menu-item-active text-white' : 'text-gray-600' }} block px-3 py-2 rounded-lg hover:bg-gray-100 transition-all duration-200">
                                             Pengajuan UMKM
