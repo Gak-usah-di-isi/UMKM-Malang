@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\Article;
 use App\Models\ArticleCategory;
-use App\Models\ArticleComment;
-use App\Models\ArticleLike;
 
 class AdminArticleController extends Controller
 {
@@ -58,13 +56,11 @@ class AdminArticleController extends Controller
 
     public function show($slug)
     {
-        $article = Article::with(['category', 'user', 'comments.user'])
+        $article = Article::with(['category', 'user'])
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $comments = $article->comments()->latest()->get();
-
-        return view('admin.article.show', compact('article', 'comments'));
+        return view('admin.article.show', compact('article'));
     }
 
     public function edit($slug)
